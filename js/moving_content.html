@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert or delete</title>
+<style>
+	.paraOne{
+		position:relative;
+		left: 100px;
+		top:30px;		
+	}
+	
+	.paraTwo{
+		position:relative;
+		left: 400px;
+		top:10px;		
+	}
+	
+</style>
+</head>
+
+<body onload="window_onload()">
+
+<p class="paraOne" id="para1">Para 1</p>
+<p class="paraTwo" id="para2">Para 2</p>
+
+<script>
+debugger;
+	var paraOneLeft = 100;
+	var paraTwoLeft = 400;
+	var SwitchDirection = false;
+	
+	function window_onload(){
+		window.setInterval("moveParas()",0);
+	}
+	
+	function moveParas(){
+		if(SwitchDirection == false){
+			paraOneLeft++;
+			paraTwoLeft--;
+			if(paraOneLeft == 400){
+				SwitchDirection = true;
+			}
+		}else{
+			paraOneLeft--;
+			paraTwoLeft++;
+			if( paraOneLeft == 100 ){
+				SwitchDirection = false;
+			}
+		}
+		
+		para1.style.left = paraOneLeft + "px";
+		para2.style.left = paraTwoLeft + "px";
+	}
+	moveParas();
+</script>
+</body>
+</html>

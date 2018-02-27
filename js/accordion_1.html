@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.panel{ display:none;}
+</style>
+</head>
+<body>
+<div class="tab">Accordion 1</div>
+<div class="panel">
+	<p>This is accordion panel.</p>
+</div>
+
+<div class="tab">Accordion 1</div>
+<div class="panel">
+	<p>This is accordion panel.</p>
+</div>
+
+<div class="tab">Accordion 1</div>
+<div class="panel">
+	<p>This is accordion panel.</p>
+</div>
+
+<script>
+var acc = document.getElementsByClassName("tab");
+//console.log(acc);
+for(var i = 0; i<acc.length; i++){
+	var tabs = acc[i];
+	tabs.onclick = function(){
+		var panel = this.nextElementSibling;
+		if(panel.style.display == "none"){
+			panel.style.display = "block";
+		}else{
+			panel.style.display = "none";		
+		}
+	}
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Ng Include with ListView and GridView</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width , initial-scale=1">
+        <style>
+        
+        </style>
+    </head>
+    <body ng-app="myApp" ng-controller="myCtrl">
+    <select ng-model="View">
+        <option value="grid.html">Grid View</option>
+        <option value="list.html">List View</option>
+    </select>
+    
+        <div ng-include="View"></div>
+    <script src="js/angular.min.js"></script>    
+    <script>
+        angular.module('myApp',[]).controller('myCtrl', function($scope){
+            
+            var emp = [
+                {'name':'Ram','age':23,'city':'Uttam Nagar'},
+                {'name':'Shyam','age':25,'city':'Nazafgar'},
+                {'name':'Anand','age':55,'city':'Shalimar Bagh'}
+            ];
+            
+            $scope.employees = emp;
+            $scope.View = 'grid.html';
+        });
+    </script>
+    
+    </body>
+</html>

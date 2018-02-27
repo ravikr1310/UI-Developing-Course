@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Logical Question</title>
+	<style>
+		
+	</style>
+</head>
+<body>
+
+<script src="jquery.min.js"></script>
+<script type="text/javascript" >
+ $(document).ready(function(){
+	var str1 = "abqrdclm";
+	var str2 = "qrmnabdc";
+	
+	var splitedString1 = str1.split("");
+	var splitedString2 = str2.split("");
+	
+	for(var i = 0; i < splitedString1.length; i++){
+		for(var j = 0; j < splitedString2.length; j++){
+			if(splitedString1[i] == splitedString2[j]){
+				document.write(splitedString1[i]);
+			}
+		}
+	}
+	
+	/*var a = "one,two,three".split(",") 
+	for (var i = 0; i < a.length; i++)
+	{
+		alert(a[i])
+	}*/
+ });
+     
+</script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>call and apply</title>
+	
+</head>
+<body>
+   
+<script src="jquery.min.js"></script>
+<script type="text/javascript" >
+ var person = {
+	firstName : "First",
+	lastName : "Object",
+	fullName : function(){
+		return this.firstName + " " + this.lastName;
+	}
+ }
+ var person1 = {
+	firstName : "Second",
+	lastName : "Object",
+	fullName : function(){
+		return this.firstName + " " + this.lastName;
+	}
+ }
+ var myObj = {
+	firstName : "Ajit",
+	lastName : "Kumar"
+ }
+ var call = person.fullName.call(myObj);
+ var apply = person.fullName.apply(myObj);
+
+ var call1 = person1.fullName.call(myObj);
+ var apply1 = person1.fullName.apply(myObj);
+ document.write(call);
+ document.write("<br>");
+ document.write(apply);
+ 
+ document.write("<br>");
+ document.write(call1);
+ document.write(apply1);
+</script>
+
+</body>
+</html>

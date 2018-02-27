@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>event stopImmediatePropagation</title>
+	
+</head>
+<body>
+<!--
+    Use of event.stopImmediatePropagation()
+    1. Execute the first event handler, and stop the 
+        rest of the event handlers from being executed.
+-->
+<script src="jquery.min.js"></script>
+<script type="text/javascript" >
+    
+$(document).ready(function(){
+    $("div").click(function(event){
+        alert("First Event Handler executed");
+        //event.stopImmediatePropagation();
+    });
+    $("div").click(function(event){
+        alert("Second Event Handler executed");
+        //event.stopImmediatePropagation();
+    });
+    $("div").click(function(event){
+        alert("Third Event Handler executed");
+        event.stopImmediatePropagation();
+    });
+    
+});	    
+     
+</script>
+
+<div>Click me</div>
+</body>
+</html>

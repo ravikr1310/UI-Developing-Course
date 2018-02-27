@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Custom Directive and its property</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width , initial-scale=1">
+        <style>
+        
+        </style>
+    </head>
+    <body ng-app="myApp" ng-controller="myCtrl">
+	<div ng-controller="myCtrl">
+		<p>Parent Scope Value {{name}}</p><br>
+		<first-directive></first-directive>
+	</div>
+    
+	
+    <script src="js/angular.min.js"></script>    
+    <script>
+		var app = angular.module("myApp", []);
+		
+		app.controller("myCtrl", function($scope){
+			$scope.name = "Ravi Kumar";
+		});
+		app.directive("firstDirective", function(){
+			return{
+				restrict: 'E',
+				scope: true,
+				template: '<div>My Name is {{name}}</div>' + '<input type="text" ng-model="name">'
+			}
+		});
+    </script>
+    
+    </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Custom Directive and its property</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width , initial-scale=1">
+        <style>
+        
+        </style>
+    </head>
+    <body ng-app="quovantisBlog">
+	<div ng-controller="TwoWayController">
+		<inventory-product data="product1"></inventory-product>
+        <inventory-product data="product1"></inventory-product>
+	</div>
+    
+	
+    <script src="js/angular.min.js"></script>    
+    <script>
+		var app = angular.module('quovantisBlog', []);
+		//controller
+		app.controller('TwoWayController', function ($scope) {
+			$scope.product1 = {
+				name: 'Phone',
+				price: '100',
+				stock: true
+			};
+			$scope.product2 = {
+				name: 'TV',
+				price: '1000',
+				stock: false
+			};
+			$scope.product3 = {
+				name: 'Laptop',
+				price: '800',
+				stock: false
+			};
+		 
+			$scope.ShowData = function () {
+				alert("Display Data");
+			}
+		});
+		
+		// directive
+		app.directive('inventoryProduct', function () {
+			return{
+				restrict: 'E',
+				scope: {
+					data: '='
+				},
+				template: '{{data.name }} {{data.price}}<input type="text" ng-model="data.name">'
+			}
+		});
+    </script>
+    
+    </body>
+</html>

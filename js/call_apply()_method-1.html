@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>call() and apply()</title>
+	<!--Def:-  The Call() method is predefined javascript function method -->
+	<!--Use:- We can use a method belonging to another object -->
+</head>
+<body>
+<script type="text/javascript" >
+	function Person(fname,lname){
+		this.firstName = fname;
+		this.lastName = lname;
+		this.details = function(){
+			return this.firstName + " " + this.lastName;
+		}
+	}
+	var PersoneObj = {
+		firstName : "Ravi",
+		lastName : "Kumar"
+	}
+	var per = new Person();
+	console.log(per.details.call(PersoneObj)); // takes any function arguments saperately
+	console.log(per.details.apply(PersoneObj)); // takes any function arguments as an array
+</script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Accordion</title>
+	<style>
+		ul li p{display:none;}
+	</style>
+</head>
+<body>
+
+<ul>
+	<li onclick="showDetails(this)" id="owl" data-animal-type="bird">Owl
+	</li>
+	<li onclick="showDetails(this)" id="crow" data-animal-type="animal">Dog
+	</li>
+</ul>
+<script src="jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript" >
+function showDetails(animal){
+    var animalType = animal.getAttribute('data-animal-type');
+    alert("The" + animal.innerHTML + "is a" + animalType + ".");
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>create new array and push the element from existing after doubling the each and every element</title>
+	
+</head>
+<body>
+    <script src="../js/jquery.min.js"></script>
+    <script type="text/javascript" >
+        $(document).ready(function(){
+            var arr = [1,2,3,4,5,6,7,8,9,10];
+            var newArray = [];
+            var newA;
+            for(var i = 0; i <= arr.length; i++){
+                var newElement = arr[i]*2;
+                newArray.push(newElement);
+                var newA = newArray[i];
+                console.log(newA);
+                alert(newA);
+            }
+        });
+    </script>
+
+</body>
+</html>

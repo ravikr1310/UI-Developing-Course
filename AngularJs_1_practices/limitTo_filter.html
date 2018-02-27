@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body ng-controller="myCtrl">
+<select ng-model="setLimit">
+	<option>1</option>
+	<option>4</option>
+	<option>7</option>
+	<option>3</option>
+</select>
+<br><br>
+
+<table border="1">
+<tr>
+	<th>Name</th>
+	<th>Gender</th>
+	<th>City</th>
+	<th>Salary</th>
+</tr>
+<tr ng-repeat="x in employee | limitTo:setLimit">
+	<td>{{x.name}}</td>
+	<td>{{x.gender}}</td>
+	<td>{{x.city}}</td>
+	<td>{{x.salary}}</td>
+</tr>
+
+</table>
+<script>
+angular.module('myapp',[]).controller('myCtrl', function($scope){
+	var employee = {};
+	var emp = [
+	{"name":"Rahul Sikre","gender":"Male","city":"Delhi","salary":400000},
+	{"name":"Meea","gender":"Female","city":"Pune","salary":403000},
+	{"name":"Kamal","gender":"Male","city":"Shimal","salary":430000},
+	{"name":"Ashish","gender":"Male","city":"Noida","salary":443210},
+	{"name":"Jugmohen","gender":"Male","city":"Banarash","salary":165432},
+	{"name":"Abishek","gender":"Male","city":"Asansol","salary":652343},
+	{"name":"Manshi","gender":"Female","city":"Delhi","salary":340000},
+	{"name":"Rama","gender":"Male","city":"UP","salary":965437},
+	{"name":"Shyam","gender":"Male","city":"Himachal","salary":210000},
+	{"name":"Rajeev","gender":"Male","city":"Shalimar","salary":980000},
+	{"name":"Santosh","gender":"Male","city":"Punjab","salary":330000}
+	];
+	$scope.employee = emp;
+	
+	$scope.sortingFun = function(){
+		$scope.setLimit = 5;
+	}
+	$scope.sortingFun();
+});
+</script>
+</body>
+</html>

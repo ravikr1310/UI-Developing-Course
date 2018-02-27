@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	
+</head>
+<body>
+l: 4
+u: 7
+o: 4
+i: 4
+j: 7
+k: 4
+m: 12
+    
+<script src="jquery.min.js"></script>
+<script type="text/javascript" >
+ var i = 4;
+ if(true){
+	var j = 7;
+	k = i;
+ }
+ function show(){
+	var l = i;
+	var u = j;
+	var o = k;
+	m = 12;
+	
+	console.log("l: " + l); // 4
+	console.log("u: " + u); // 7
+	console.log("o: " + o); // 4
+ }
+ window.onload = show();
+ 
+ console.log("i: " + i); // 4
+ console.log("j: " + j); // 7
+ console.log("k: " + k); // 4
+ console.log("m: " + m); // 12
+</script>
+
+</body>
+</html>

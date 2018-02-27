@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+div{
+	width:100px;
+	height:100px;
+	background-color:red;
+	/*transition:width 2s, height 2s;
+	transition-delay:2s;*/
+    transition-timing-function:ease; /* slow start and then fast and then end slowely */
+    /*transition-timing-function:linear;*/ /* same speed from start to end */
+	/*transition-timing-function:ease-in;*/ /* slow start */
+	/*transition-timing-function:ease-out;*/ /* slow end */
+    /*transition-timing-function:ease-in-out *//* slow start and end */
+    transition-property: width, height, background;
+    transition-duration: 2s;
+}
+/*div:hover{
+	width: 500px;
+	height:500px;
+    background:green;
+}*/
+    
+    .div1{ width:100px; height:100px; }
+    /*.div1:hover{transform: translate(20px, 30px); transform-style: flat;}*/
+    /*.div1:hover{transform:rotate(20deg)}*/
+    /*.div1:hover{transform:scale(2,3)}*/
+    /*.div1:hover{transform:skewX(20deg)}*/
+    .div1:hover{
+    -ms-transform: matrix(1, -0.3, 0, 1, 0, 0); /* IE 9 */
+    -webkit-transform: matrix(1, -0.3, 0, 1, 0, 0); /* Safari */
+        transform: matrix(1, -0.3, 0, 1, 0, 0);}
+</style>
+</head>
+<body>
+
+<p><b>Note:</b> This example does not work in Internet Explorer 9 and earlier versions.</p>
+
+<div></div>
+
+<p>Hover over the div element above, to see the transition effect.</p>
+    <div class="div1">Transform(translate)</div>
+
+</body>
+</html>

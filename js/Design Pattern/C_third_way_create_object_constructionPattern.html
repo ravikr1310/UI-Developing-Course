@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Factory Pattern</title>
+	
+</style>
+</head>
+<body>
+    
+<script type="text/javascript" >
+	// Constractor pattern => 
+	
+	function Person(name, age, work){		
+		this.name = name;
+		this.age = age;
+		this.work = work;
+		
+		this.personDetails = function(){
+			return this.name + " " + this.age + " " + this.work;
+		}
+	}
+	var person1 = new Person("Ravi",32,"UI Developer");
+	var person2 = new Person("Ajit" , 100, "Majdoori");
+	document.write(person2.personDetails());
+</script>
+
+</body>
+</html>

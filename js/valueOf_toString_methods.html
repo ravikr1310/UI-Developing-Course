@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>valueOf(), toString(), join() methods</title>
+	<!--
+        1. Converting array to string
+        2. in javascript all object have toString() and valueOf() methods.
+        
+    -->
+</head>
+<body>
+<div id="ele"></div>
+
+<script src="jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript" >
+var fruits = ["Apple","Orange","Mango"];
+var vegetable = ["Potato","Tomaro","Curlyflower"];
+    //fruits.push("Banana"); // add element at the end of the array
+    //fruits.unshift("Banana"); // add element at the beginning of the array
+    //fruits.splice(1,2); // remove 2 elements from 1 index in which, first parameter is for position(0,1,2,3,4,...) and second parameter is for no. of elements 
+    //fruits.splice(1,2,"Govava","Pineapple"); // remove two elements i.e (Orange, Mango) and insert Govava and Pineapple instead of its.
+    //console.log(fruits.slice(0,2));
+    //fruits.sort(); // sorting of array elements
+    fruits.reverse(); // reversing of the order of the elements
+var numbers = [17,55,23,4,11];
+    var i =0;
+document.getElementById("ele").innerHTML = fruits; // simple array
+//document.getElementById("ele").innerHTML = fruits.toString(); // converting array to string
+//document.getElementById("ele").innerHTML = fruits.valueOf(); // converting array to string
+//document.getElementById("ele").innerHTML = numbers.join("*"); // the join method also join array elements into a string
+document.getElementById("ele").innerHTML = fruits; // push method add new item at the last position in side array
+//document.write(fruits[i]);
+    console.log(fruits[i]);
+    
+   numbers.sort(function(a,b){
+       return a-b; // find the smallest no. from array elements
+   });
+    console.log(numbers[i]);
+    
+    numbers.sort(function(a,b){
+        return b-a; // find the highest no. from array elments
+    });
+    console.log(numbers[i]);
+    
+    // concat method :  its is used to create new array by concatenating two array.   
+    var newArray = fruits.concat(vegetable); // merging two array
+    console.log(newArray)
+    
+</script>
+</body>
+</html>

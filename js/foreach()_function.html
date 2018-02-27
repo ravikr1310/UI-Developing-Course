@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>foreach() function</title>
+	
+</head>
+<body>
+    
+<ul id="list"></ul>
+
+<script type="text/javascript" >
+var x = ["Apple","Mango","Banana"];
+var list = document.getElementById('list');
+    
+x.forEach(function(a,b){
+    var li = document.createElement('li');
+    li.textContent = "Position: " + " " + b + " " + a;
+    list.appendChild(li);
+});
+</script>
+
+</body>
+</html>

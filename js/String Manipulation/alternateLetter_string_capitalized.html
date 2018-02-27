@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>No. of letter found in a string</title>
+	<style>
+		.parentDiv{ width:100px; height:100px; background-color:yellow;}
+		#childDiv{ width:10px; height:10px; background-color:green; position:relative; left:0; right:0;}
+	</style>
+</head>
+<body>
+
+<!--<script src="js/angular.min.js"></script>-->
+<script>
+	var str= "independance day";
+	var singleElement;
+	var txt = "";
+	
+	function capitalize(data){
+	debugger;
+		for(var i=0; i< data.length; i++){
+				singleElement = data[i];
+				if(i%2==0){
+					singleElement= singleElement.toUpperCase();
+				}		
+				txt+= singleElement;			
+			}
+			return txt;
+	}
+	capitalize(str);
+	document.write(txt);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Reverse of any string</title>
+	<!-- A function without name is call anomymouse function -->
+</head>
+<body>
+<button type="button" onClick="myFunction('Ravi')">Click Me!</button>
+<script type="text/javascript" >
+
+	// Anonymouse function
+	/*(function(){
+		var  str = "My Name is Ravi Kumar";
+		var afterReverse = str.split('').reverse().join('');
+		console.log(afterReverse);
+	}());*/
+	
+	// construction function
+	function myFunction(str){
+		var str = str;
+		var afterReverse = str.split('').reverse().join('');
+		console.log(afterReverse);
+	}
+	var objStr = new myFunction("Hello World");
+	console.log(objStr);
+</script>
+
+</body>
+</html>

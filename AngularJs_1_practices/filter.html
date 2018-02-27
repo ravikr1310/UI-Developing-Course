@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Filter:-</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale =1">
+		
+	</head>
+	<body ng-app="myApp" ng-controller="myCtrl">
+        <select ng-model="limit">
+            <option>2</option>
+            <option>1</option>
+            <option>6</option>
+            <option>3</option>
+        </select>
+        <br>
+        <hr>
+        <br>
+        <input type="checkbox" ng-model="u_l"/>
+        <br>
+        <hr>
+        <select ng-model="sortOrder">
+            <option value="-name">Desc Name</option>
+            <option value="+salary">Ascending</option>
+            <option value="-salary">Descending</option>
+        </select>
+        
+        <br>
+        <hr>
+        <input type="text" ng-model="searchAcc.name">
+        <table border="1" cellspacing="0" cellpadding="10">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>City</th>
+                    <th>Date Of Birth</th>
+                    <th>Country</th>
+                    <th ng-show="u_l">Salary</th>
+                    <th ng-hide="u_l">Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="em in employee | limitTo:limit | orderBy:sortOrder | filter:searchAcc">
+                    <td>{{em.id}}</td>
+                    <td>{{em.name | uppercase}}</td>
+                    <td>{{em.age | number:2}}</td>
+                    <td>{{em.city}}</td>
+                    <td>{{em.dob | date}}</td>
+                    <td>{{em.country}}</td>
+                    <td ng-show="u_l">{{em.salary | currency}}</td>
+                    <td ng-hide="u_l">xxxxxxxx</td>
+                </tr>
+            </tbody>
+        </table>
+		
+		<script src="js/angular.min.js"></script>
+		
+		<script>
+        angular.module('myApp',[]).controller('myCtrl',function($scope){
+            var emp = [
+              {'id':100,'name':'Ram','age':24,'city':'Delhi','dob':new Date("09 Nov 1992"),'country':'india','salary':40000},
+              {'id':101,'name':'Kasa','age':33,'city':'Katmandu','dob':new Date("03 Nov 1990"),'country':'Nepal','salary':48000},
+              {'id':102,'name':'Zafer','age':24,'city':'Karachi','dob':new Date("08 Nov 1993"),'country':'Pakistan','salary':350000},
+              {'id':103,'name':'Ching Chung','age':66,'city':'Kitchipur','dob':new Date("10 Dec 2000"),'country':'China','salary':25000},
+              {'id':104,'name':'Bhara','age':28,'city':'Lakiput','dob':new Date("18 Jan 2001"),'country':'Bhutan','salary':67000},
+              {'id':105,'name':'Pajama','age':24,'city':'Delhi','dob':new Date("22 Feb 2004"),'country':'Paniputi','salary':22000}
+          ];
+            
+            $scope.employee = emp;
+            
+            $scope.limit = 2;
+            
+            $scope.sortOrder = {}
+        });           
+        
+		</script>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Accordion</title>
+	<style>
+		ul li p{display:none;}
+	</style>
+</head>
+<body>
+
+<ul>
+	<li>First
+		<p>First Content</p>
+	</li>
+	<li>Second
+		<p>Second Content</p>
+	</li>
+	<li>Third
+		<p>Third Content</p>
+	</li>
+	<li>Fourth
+		<p>Fourth Content</p>
+	</li>
+</ul>
+<script src="jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript" >
+$(document).ready(function(){
+	$('ul li p:first').slideDown();
+	$('ul li').on('click',function()){
+		if($('ul li').find('p').is(':visible')){
+			$('li p').slideUp();
+			$(this).find('p').slideDown();
+		};
+	});
+});
+</script>
+</body>
+</html>

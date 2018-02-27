@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>localStorage.pageCount on browser refresh</title>
+	
+</head>
+<body>
+    <script src="../js/jquery.min.js"></script>
+    <script type="text/javascript" >
+        if(localStorage.pageCount){
+            localStorage.pageCount = Number(localStorage.pageCount) + 1;
+        }else{
+            localStorage.pageCount = 1;
+        }
+        console.log(localStorage.pageCount);
+    </script>
+
+</body>
+</html>

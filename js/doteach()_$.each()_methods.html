@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>difference between .each() method and $.each() method</title>
+	
+</head>
+<body>
+    <ul>
+        <li>Apple</li>
+        <li>Mango</li>
+        <li>Orange</li>
+    </ul>
+    <div id="id"></div>
+    <script src="../js/jquery.min.js"></script>
+    <script type="text/javascript" >
+        $(document).ready(function(){
+            var result = "";
+            $('li').each(function(index,element){
+                result += "Index: " + index + " " + "value = " + $(element).text();
+            });
+            $('#id').html(result);
+        });
+    </script>
+
+</body>
+</html>

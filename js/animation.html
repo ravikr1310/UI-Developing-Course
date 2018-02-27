@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<style>
+	.box{
+		width:50px;
+		height:50px;
+		background-color: green;
+		color:#fff;
+		position:absolute;
+		left:0;
+	}
+	#btn{ position:relative; top:20px;}
+	.parentDiv{width:200px; height:200px; background-color:yellow; position:relative;}
+</style>
+
+
+
+<body>
+<div class="parentDiv">
+<div class="box" id="squareBox">
+	<strong>Ani</strong>
+</div>
+</div>
+<br>
+<br>
+<br>
+<button type="button" id="btn" onclick="move()">Animate Me!</button>
+
+
+<script>
+	function move(){
+		var ele_obj = document.getElementById("squareBox");
+		var btn_obj = document.getElementById("btn");
+		var timer_obj = setInterval(frame, 10);
+		var left = 0;
+		var run=true;
+		function frame(){	
+			if(left>-1 && left <151 && run==true){
+				//clearInterval(timer_obj);
+				left++;
+			}else{
+				run=false;
+				
+			}
+			if(left>150 && run==false){
+				//clearInterval(timer_obj);
+				left--;
+			}
+			
+			ele_obj.style.left = left + "px";
+			ele_obj.innerHTML = left + "px";			
+		}
+	}
+</script>
+
+</body>
+</html>

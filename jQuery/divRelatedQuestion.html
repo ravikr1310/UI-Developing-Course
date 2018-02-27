@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Logical Question</title>
+	<style>
+		
+	</style>
+</head>
+<body>
+<div class="container">
+	<div class="row">One
+		<span>3</span>
+		<span>5</span>
+	</div>
+	<div class="row">One
+		<span>4</span>
+		<span>9</span>
+	</div>
+	<div class="row">One
+		<span>6</span>
+		<span>8</span>
+	</div>
+	<div class="row">One
+		<span>3</span>
+		<span>2</span>
+	</div>
+</div>
+<script src="jquery.min.js"></script>
+<script type="text/javascript" >
+ $(document).ready(function(){
+	var spanValue  = $('div.container div span:last-child').text();
+	var arr = [];
+	arr.push(spanValue);
+	var arrLengt = arr.length;
+	if(arrLengt > 0){
+		for(var i = 0; i< arrLengt; i++){
+			arr.push()
+		}
+	}
+	console.log(arrLengt);
+	//arr.split(" ");
+	<!-- arr.join(','); -->
+	<!-- arr.sort(function(a,b){ -->
+		<!-- return b-a; -->
+	<!-- }); -->
+	console.log(arr[0]);
+	
+	/*var array = [3 , 6, 2, 56, 32, 5, 89, 32];
+	array.sort(function(a,b){
+		return b - a;
+	});
+	alert(array[0]);*/
+ });
+     
+</script>
+
+</body>
+</html>

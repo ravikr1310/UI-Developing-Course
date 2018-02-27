@@ -1,0 +1,39 @@
+<!--Def: The Object.assign() method is used to copy the values of all enumerable own properties 
+from one or more source objects to a target object. It will return the target object.-->
+
+<!--Syntax:- Object.assign(target, ...sources)-->
+
+<script>
+// Merging object with different property
+
+var o1 = { a: 1 };
+var o2 = { b: 2 }; 
+var o3 = { c: 3 };
+
+var obj = Object.assign(o1, o2, o3);
+console.log(obj); // { a: 1, b: 2, c: 3 }
+console.log(o1);  // { a: 1, b: 2, c: 3 }, target object itself is changed.
+
+
+// Merging object with same property
+var o1 = { a: 1, b: 1, c: 1, d: 4 };
+var o2 = { b: 2, c: 2 };
+var o3 = { c: 3 };
+
+var obj = Object.assign({}, o1, o2, o3);
+console.log(obj); // { a: 1, b: 2, c: 3 }
+
+// Copying symbol-typed properties
+var o1 = { a: 1 };
+var o2 = { [Symbol('foo')]: 2 };
+
+var obj = Object.assign({}, o1, o2);
+console.log(obj); // { a : 1, [Symbol("foo")]: 2 } (cf. bug 1207182 on Firefox)
+//Object.getOwnPropertySymbols(obj); // [Symbol(foo)]
+
+var ab = {a:1, b:2};
+var ba = {c:3, d:4};
+var result = Object.assign(ab, ba);
+console.log(result);
+
+</script> 

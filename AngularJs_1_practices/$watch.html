@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>$broadcast</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width , initial-scale=1">
+        <style>
+        
+        </style>
+    </head>
+    <body ng-app="myApp">
+    <div ng-controller="firstCtrl">
+        <input type="text" ng-model="name">
+		<br><br>
+		<span>changing in name value {{counter}}</span>
+    </div>
+    <script src="js/angular.min.js"></script>    
+    <script>
+        var app = angular.module('myApp',[]);
+        app.controller('firstCtrl', function($scope){
+            $scope.name = "Ravi Kumar";
+			$scope.counter = 0;
+			// watching changing in name value
+			$scope.$watch('name', function(newValue, oldValue){
+				$scope.counter = $scope.counter + 1;
+				console.log("New Value: " + newValue);
+				console.log("Old Value: " + oldValue);
+			})
+        });
+		
+		
+        
+    </script>
+    
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Factory, service and provider</title>
+    
+</head>
+<body>
+    <p>Factory:<br>
+        Def: Factory is a simple function which allows you to add some logic before creating the object. It returns the created object.
+        When to use: it is a just a collection of functions like a class. Hence, it can be instantiated in different controllers when you are using it with constructor function.   
+    </p>
+    <p>Service:<br> 
+        Def: A service is a constructor function which created the object using new keyword. You can add properties and functions to a service object by using this keyword. Unlike factory, it doesn't return anything.
+        when to use: It is a singleton object. Use it when you need to share a single object across the application
+        Example: authenticated user details    
+    </p>
+    <p>Provider:<br> 
+        Def: A provider is used to create a configurable service object. It returns value by using $get() function.
+        when to use: when you need to provide module-wise configuration for your service object before making it available.
+    </p>
+    
+    <hr><br>
+<div ng-app="myApp" ng-controller="ctrl">
+    <p>{{named}}</p>
+    <p>From Factory: {{factoryname}}</p>
+    <p>From Service: {{servicename}}</p>
+    <p>From Provider: {{providername}}</p>
+</div>
+
+
+
+<script src="js/angular.min.js"></script>
+<script src="js/factory-service-provider.js"></script>
+</body>
+</html>

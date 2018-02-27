@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>isNAN</title>
+	
+</head>
+<body>
+<script type="text/javascript" >
+debugger;
+if(localStorage.pageCount){
+	localStorage.pageCount = Number(localStorage.pageCount)+1;
+}else{
+	localStorage.pageCount = 1;
+}
+document.write(localStorage.pageCount);
+
+document.write("<hr>");
+
+if(sessionStorage.pageCount){
+	sessionStorage.pageCount = Number(sessionStorage.pageCount)+1;
+}else{
+	sessionStorage.pageCount = 1;
+}
+document.write(sessionStorage.pageCount);
+
+</script>
+
+</body>
+</html>

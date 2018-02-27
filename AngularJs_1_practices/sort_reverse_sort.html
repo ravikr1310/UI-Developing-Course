@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<style>
+	span{
+		display:inline-block;}
+    .arrow-up{
+		width:0px;
+		border-bottom:10px solid;
+		border-left:5px red solid;
+		border-right:5px red solid;
+		}
+		
+	.arrow-down{
+		width:0px;
+		border-top:10px solid;
+		border-left:5px red solid;
+		border-right:5px red solid;
+		}	
+    </style>
+</head>
+<body ng-controller="myCtrl">
+
+
+<table border="1">
+<tr>
+	<th ng-click="sortByName('name')">Name <span ng-class="arrowSort('name')"></span></th>
+	<th>Gender</th>
+	<th>City</th>
+	<th>Salary</th>
+</tr>
+<tr ng-repeat="x in employee | orderBy:sortName:reverseSort">
+	<td>{{x.name | uppercase}}</td>
+	<td>{{x.gender}}</td>
+	<td>{{x.city}}</td>
+	<td>{{x.salary | currency}}</td>
+</tr>
+
+</table>
+<script>
+angular.module('myapp',[]).controller('myCtrl', function($scope){
+	var employee = {};
+	var emp = [
+	{"name":"Rahul Sikre","gender":"Male","city":"Delhi","salary":400000},
+	{"name":"Meea","gender":"Female","city":"Pune","salary":403000},
+	{"name":"Kamlesh","gender":"Male","city":"Urjanagar","salary":430000},
+	{"name":"Sujit","gender":"Male","city":"Shimal","salary":234000},
+	{"name":"Ashish","gender":"Male","city":"Godda","salary":523000}
+	];
+	$scope.employee = emp;
+	$scope.sortName = "name";
+	$scope.reverseSort = false;
+	
+	$scope.sortByName = function(data){
+		if($scope.sortName == data){
+			$scope.reverseSort = ($scope.reverseSort)?false:true;
+		}
+		$scope.sortName = data;
+	}
+	
+	$scope.arrowSort = function(data){
+		if($scope.sortName == data){
+			return ($scope.reverseSort)?'arrow-up':'arrow-down';
+		}
+	}
+	
+	
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>splice() method</title>
+	
+</head>
+<body>
+<div id="div"></div>
+<script type="text/javascript" >
+var ss;
+function spliceMethod(){
+	var arr = ["Apple","Mango","Orange","Banana"];
+	var str = "Hello";
+	document.write(str.toArray());
+	//arr.splice(1,3); // only can remove three elements from zero position
+					 // first parameter for index(position from 0,1,2 etc) and second paramenter for no. of element)
+	arr.splice(1); // after removing two element add two element
+	document.write(str);
+	document.write(arr);
+}
+spliceMethod();
+</script>
+
+</body>
+</html>

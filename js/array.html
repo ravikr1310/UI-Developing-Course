@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>isNAN</title>
+	
+</head>
+<body>
+<script type="text/javascript" >
+var myArray = new Array();
+var myArray = ['Apple','Mango','Orange','Graps','Guvava'];
+myArray[1] = "Coconut";
+var i;
+for(i=0; i<=myArray.length; i++){
+alert(myArray[1]);
+
+	if(myArray[i] == 'Orange'){
+		//document.write('Found:' + " " + arr[i] + '<br>');
+		document.write('Updated:' + " " + (myArray[i] = 'House') + '<br>');
+	}else{
+		document.write('Not Found:' + " " + myArray[i] + '<br>');
+		
+	}
+	
+}
+
+</script>
+
+</body>
+</html>

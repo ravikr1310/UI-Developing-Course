@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Accordion</title>
+	<style>
+		ul li{ text-decoration:none; background-color:gray; color:#fff; padding:10px 0 10px 0; margin-bottom:2px;}
+		p{display:none; background-color:white; color:#000;}
+	</style>
+</head>
+<body>
+<ul>
+	<li>One
+		<p>This is my first Tab</p>
+	</li>
+	<li>Two
+		<p>This is my Second Tab</p>
+	</li>
+	<li>Three
+		<p>This is my Third Tab</p>
+	</li>
+	<li>Four
+		<p>This is my Forth Tab</p>
+	</li>
+</ul>
+<script src="jquery.min.js"></script>
+<script type="text/javascript" >
+ $(document).ready(function(){
+	$("ul li:first p").slideDown();
+	$("ul li").on('click', function(){
+		$("ul li p").slideUp();
+		$(this).find('p').slideDown();
+	});
+ });
+     
+</script>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>angular.element, jQuery() and $()</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale =1">
+		
+	</head>
+	<body ng-app="myApp" ng-controller="myCtrl">
+		
+        <div>{{abs_url}}</div>
+        <div>{{url}}</div>
+		
+        <h1>{{myName}}</h1>
+        
+        <h1>{{myInter}}</h1>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        <script>
+		  angular.module('myApp',[]).controller('myCtrl', function($scope,$location,$http,$timeout,$interval){
+              
+              // $location service with method absUrl()
+              $scope.abs_url = $location.absUrl(); 
+              $scope.url = $location.url();
+              
+              function dataFunctionCallBack(response){
+                  $scope.output = response.data;
+              }
+              
+              function dataErrowCallBack(result){
+                  $scope.errorOutput = result.data;
+              } 
+              
+              // $http service
+              $http.get('customers.php').then(dataFunctionCallBack,dataErrowCallBack);
+              
+              // $timeout service
+              $scope.myName = "Ravi Kumar";
+              $timeout(function(){
+                  $scope.myName = "Ajit Singh";
+              },2000);
+              
+              // $interval service
+              $scope.myInter = new Date().toLocaleTimeString();
+              $interval(function(){
+                  $scope.myInter = new Date().toLocaleTimeString();
+              },1000);
+          });
+		</script>
+        
+	</body>
+    
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Triangle Pattern</title>
+	
+</head>
+<body>
+    
+    <script type="text/javascript" >
+	// triangle
+    function triPattern(){
+	var i;
+	var j;
+		for(i = 0; i<10; i++){
+			for(j = 0; j<=i; j++){
+				document.write("*");
+			}
+				document.write("<br>");
+		}
+	}
+     triPattern();
+	document.write("<hr>");
+	document.write("<br>");
+	
+	function stars(n){
+    var str = '';
+		for(var i=1; i<=n; i++){
+			for(var k=1; k<=n-i; k++){
+				str += "\t";
+			}
+			for(var j=1; j<=i; j++){
+				str += "*\t\t";
+			}
+			console.log(str);
+			str = "";
+		}
+	}
+	stars(3);
+	
+	
+    </script>
+
+</body>
+</html>

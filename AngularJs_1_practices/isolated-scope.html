@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body ng-controller="myCtrl">
+<shared-scope></shared-scope>
+
+<script>
+var app  = angular.module('myapp',[]);
+app.controller('myCtrl', function($scope){
+	$scope.emp = {title:"Shared Scope",detail:"angular1 "};
+});
+app.directive('sharedScope',function(){
+	return{
+		scope:{}, // isolated scope not able to access scope variable defined in controller
+		template: '<strong>Title:</strong> {{emp.title}} </br> <strong>detail:</strong> {{emp.detail}}'
+	}
+});
+</script>
+</body>
+</html>

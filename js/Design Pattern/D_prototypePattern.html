@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prototype Pattern</title>
+	
+</style>
+</head>
+<body>
+    
+<script type="text/javascript" >
+	// Prototype pattern => 
+	
+	function Person(name, age, work){		
+		this.name = name;
+		this.age = age;
+		this.work = work;
+		
+		this.personDetails = function(){
+			return this.name + " " + this.age + " " + this.work;
+		}
+	}
+	Person.prototype.currentYear = function(){
+		var currentData = new Date().getFullYear();
+		return currentData-this.age;
+	}
+	var person1 = new Person("Ravi",32,"UI Developer");
+	var person2 = new Person("Ajit" , 100, "Majdoori");
+	document.write(person2.currentYear());
+	document.write("<br>");
+	document.write(person1.currentYear());
+</script>
+
+</body>
+</html>

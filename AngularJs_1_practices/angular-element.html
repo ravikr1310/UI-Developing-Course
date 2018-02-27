@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>angular.element, jQuery() and $()</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale =1">
+		
+	</head>
+	<body ng-app="myApp" ng-controller="myCtrl">
+		<input type="text" ng-model="val" id="txtName" value="Ravi Kumar">{{val}}
+		<button type="button" ng-click="clickme()">Click Me!</button>
+		
+		<script src="js/angular.min.js"></script>
+		
+		<script>
+		var app = angular.module("myApp", []);
+		app.controller("myCtrl", function($scope, $element){
+			$scope.clickme = function(){
+				var ele  = angular.element(document.querySelector("#txtName"));
+				console.log(ele.val());
+			}
+		});
+		</script>
+	</body>
+</html>

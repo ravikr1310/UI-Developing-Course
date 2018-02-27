@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practice</title>
+	<style>
+
+div
+{
+border:1px solid black;
+width:20px;
+height:20px;
+}
+table{ border:1px solid black; cellpadding:10px; cellspacing:0;}
+td{
+    width: 20px;
+	height:20px;
+    border: 1px solid black;
+}
+.white{background-color:white;}
+.black{background-color:black;}
+</style>
+</head>
+<body>
+    
+<script type="text/javascript" >
+	var table = document.createElement("table");
+	for (var i = 1; i < 9; i++) {
+		var tr = document.createElement('tr');
+			for (var j = 1; j < 9; j++) {
+				var td = document.createElement('td');
+				if (i%2 == j%2) {
+					td.className = "white";
+				} else {
+					td.className = "black";
+				}
+				tr.appendChild(td);
+			}
+			table.appendChild(tr);
+	}
+	document.body.appendChild(table);
+	
+</script>
+
+</body>
+</html>

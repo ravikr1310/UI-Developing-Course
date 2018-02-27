@@ -1,0 +1,18 @@
+<script>
+(function() {
+    console.log(1); // execute 1st
+    setTimeout(function(){
+		console.log(2); // execute 4th
+	}, 1000); 
+    setTimeout(function(){
+		console.log(3)
+	}, 0); // execute 3rd
+    console.log(4); // execute 2nd
+})();
+
+/*
+===> 1 and 4 are displayed first since they are logged by simple calls to console.log() without any delay.
+
+===> 2 is displayed after 3 because 2 is being logged after a delay of 1000 msecs (i.e., 1 second) whereas 3 is being logged after a delay of 0 msecs.
+/*
+</script>

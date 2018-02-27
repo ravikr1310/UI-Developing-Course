@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Closure function</title>
+	
+</head>
+<body>
+<!--
+    A closure function is a inner functin that has access to the outer function variables-scope chain.
+        1. it has access to its own scope(variable defined between it curly bracket)
+        2. it has access to the outer function variable
+        3. it has access to the global variables
+        
+        // it can access outer function parameter but not parameters object
+
+-->
+<script src="jquery.min.js"></script>
+<script type="text/javascript" >
+ function outerFunction(firstName, lastName){
+     var nameInfo = "This is my name -";
+     function innerFunction(){
+         return nameInfo + " " + firstName + " " + lastName;
+     }
+     alert(innerFunction());
+     return innerFunction();
+     
+ }
+console.log(outerFunction("Sunil","Singh"));
+console.log(outerFunction("Ravi","Kumar"));
+     
+</script>
+
+</body>
+</html>

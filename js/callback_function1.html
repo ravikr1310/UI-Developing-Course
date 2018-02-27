@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>callback function</title>
+	<!--
+		A callback function can be passed as an argument to another function. 
+	-->
+</head>
+<body>
+<input type="button" value="Show" onclick="DoProcess(10,20, ShowDiff)"/>
+<input type="button" value="Another Show" onclick="DoProcess(40,50, ShowMultiplied)"/>
+<input type="button" value="Another Show Show" onclick="DoProcess(40,50, function(p,q){
+	alert('Anonymous: ' + (p - q).toString());
+})"/>
+<script type="text/javascript" >
+	function DoProcess(a,b, doLeter){
+		alert("Add: " + (a+b).toString()); // first this will execute
+		doLeter(a,b);
+	}
+	
+	function ShowDiff(p,q){
+		alert("Diff: " + (p+q).toString()); // secondely this will execute
+	}
+	
+	function ShowMultiplied(m, n){
+		alert("Multipli: " + (m*n).toString());
+	}
+</script>
+
+</body>
+</html>

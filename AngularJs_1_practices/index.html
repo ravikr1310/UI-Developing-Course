@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<div ng-app="myApp" ng-controller="myController">
+    <div ng-repeat="movie in movies">
+        <my-movie title="{{movie}}">
+            Cinema :
+        </my-movie>
+    </div>
+</div>
+
+<div ng-app="myAppMulti">
+    <div ng-controller="ctrl1">{{firstname}}</div>
+    <div ng-controller="ctrl2">{{lastname}}</div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="js/custome-js.js"></script>
+</body>
+</html>

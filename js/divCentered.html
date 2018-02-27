@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Position</title>
+ <style type="text/css">
+ * {
+	font-size:30px; 
+	color:#000;
+	margin:0;
+}
+ 
+.eg1 {
+	margin: auto;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    bottom: 50px;
+    right: 50px;
+    background-color: #000;
+    color: #FFF;
+    z-index: 5;
+    display: table;
+    width: 50%;
+}
+.eg1 span{     
+	color: #fff;
+    margin: 0 auto;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    height: 100%;
+    word-break: break-all;}
+
+.eg2 {
+	background: #000;
+	color:#fff;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.eg3 {
+	background: #000;
+	color:#fff;
+	width:300px;
+	height: 300px;
+	margin: -150px auto auto -150px;
+	position: fixed;
+	left: 50%;
+	top:50%;
+}
+.eg4 {
+	background: white;
+	height: 200px;
+	width: 60%;
+	margin: 0 auto;
+	padding: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	resize: both;
+	overflow: auto;
+	border:1px solid #000;
+}
+.eg4 div {
+	background: black;
+	color: white;
+	width: 50%;
+	padding: 20px;
+	resize: both;
+	overflow: auto;
+}
+.eg5 {
+	background: white;
+	height: 200px;
+	width:60%;
+	margin:0 auto;
+	padding: 20px;
+	display: grid;
+	border: 1px solid #000;
+}
+.eg5 span {
+	margin: auto;
+	background: black;
+	color: white;
+}
+ </style>
+</head>
+<body>
+	<div class="eg1"><span>Two thing are bad for heart running down people and running up stair. Two thing are bad for heart running down people and running up stair.Two thing are bad for heart running down people and running up stair.Two thing are bad for heart running down people and running up stair.Two thing are bad for heart running down people and running up stair.Two thing are bad for heart running down people and running up stair.Two thing are bad for heart running down people and running up stair.Two thing are bad for heart running down people and running up stair.Two thing are bad for heart running down people and running up stair.Two thing are bad for heart running down people and running up stair.Two thing are bad for heart running down people and running up stair.</span></div>
+	<!-- <div class="eg4"><div>xxxxx <br>xxxxxxxx</div></div> -->
+	<!-- <div class="eg5"><span>yyyyyyyyyy<br>yyyyyyyy</span></div> -->
+</body 11>
+</html>

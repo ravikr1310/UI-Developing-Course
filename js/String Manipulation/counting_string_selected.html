@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>charAt() and charCodeAt() Methods - Selecting a Single Character from a String</title>
+	
+</head>
+<body>
+<script type="text/javascript" >
+debugger
+var myString = "Welcome to Wrox book. Welcome to Wrox book. Welcome to Wrox book.";
+
+var foundAtPosition = 0;
+var wroxCount = 0;
+
+while(foundAtPosition != -1){
+debugger
+	foundAtPosition = myString.indexOf("Wrox", foundAtPosition);
+	if(foundAtPosition != -1){
+	debugger
+		wroxCount++;
+		foundAtPosition++;
+	}	
+}
+debugger
+document.write("There are " + wroxCount + "occurance of the word Wrox");
+</script>
+
+</body>
+</html>

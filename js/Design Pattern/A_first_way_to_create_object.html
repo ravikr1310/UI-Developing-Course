@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practice</title>
+	
+</style>
+</head>
+<body>
+    
+<script type="text/javascript" >
+	// First way to create object and initialized property and methods
+	// with it.
+	
+	var person = new Object(); // created object
+	person.name = "Ravi Kumar";
+	person.age = 90;
+	person.work = "UI Development";
+	
+	person.getDetails = function(){
+		return this.name + " " + this.age + " " + this.work;
+	}
+	document.write(person.getDetails());
+</script>
+
+</body>
+</html>

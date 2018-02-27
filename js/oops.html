@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Object Oriented Programming Script</title>
+</head>
+<body>
+
+</body>
+<script>
+// object oriented programming
+	
+	var obj = new Object();
+	obj.name = "Ravi Kumar";
+	obj.age = 23;
+	obj.work = "UI Developer";
+	
+	obj.personDetails = function(){
+		return "My Name is " + this.name + " " + this.age + " " + this.work;
+	}
+	//alert(obj.personDetails());
+	
+	// Factory pattern
+	function factoryPerson(name, age, work){
+		var obj1 = new Object();
+		obj1.name = name;
+		obj1.age = age;
+		obj1.work = work;
+		
+		obj1.details = function(){
+			alert(this.name + " " + this.age + " " + this.work);
+		}
+		return obj1;
+	}
+	var person1 =factoryPerson('Ravi',33, "UI Developer");
+	person1.details();
+	var person2 = factoryPerson("Loru" ,44 , "Chutia");
+	person2.details();
+	
+	// Construction pattern
+	function constructionPerson(name, age, work){
+		this.name = name;
+		this.age = age;
+		this.work = work;
+		
+		this.perDetails = function(){
+			return this.details;
+		}	
+	}
+	
+	var consPerson = new constructionPerson("Kapil",55,"Actor");
+	//alert(consPerson.name);
+	
+	// prototype pattern
+	constructionPerson.prototype.personAge = function(){
+		var currentYear = new Date().getFullYear();
+		
+		return currentYear - this.age;
+	}
+	alert(consPerson.personAge());
+</script>
+</html>

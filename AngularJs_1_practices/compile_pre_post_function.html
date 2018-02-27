@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>$broadcast</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width , initial-scale=1">
+        <style>
+        
+        </style>
+    </head>
+    <body ng-app="myApp">
+    <parent-directive></parent-directive>
+	OutSide: {{fname}}
+    <script src="js/angular.min.js"></script>    
+    <script>
+		// defined module application module is container like namespace in c#
+        var app = angular.module('myApp',[]); 
+		
+		// defined controller
+		app.controller('directiveCtrl', function($scope){  
+		
+		});
+		
+		// parent directive
+		app.directive('parentDirective', function(){
+			return{
+				restrict: 'EA',
+				template: '<div class="dad">{{fname + " " + lname}}' +
+				'<child-directive></child-directive>' + '</div>',
+				controller : function(){
+					this.fname = "Ravi";
+					this.lname = "Kumar";
+				},
+				link: {
+					pre: function(scope, elem, attr, ctrl){
+						scope.fname = ctrl.fname;
+						scope.lname = ctrl.lname;
+					}
+				}
+			}
+		});
+		
+		// child directive
+		app.directive('childDirective', function(){
+			return{
+				restrict : 'EA',
+				require: '^parentDirective',
+				template: '<div class="son">{{sonSays}}</div>',
+				link : function(scope, elem, attr){
+					scope.sonSays = "Hey! My name is " + scope.fname + " " + scope.lname;
+				}
+			}
+		});
+    </script>
+    
+    </body>
+</html>

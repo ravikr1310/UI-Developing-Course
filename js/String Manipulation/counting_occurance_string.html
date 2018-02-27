@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Counting Occurance of substring</title>
+<style>
+</style>
+</head>
+<body>
+<script>
+	var str = "Ram is a good boy. Ram lives in India";
+	
+	var foundPosition = 0;
+	var stringCount = 0;
+	
+	while(foundPosition != -1){
+		foundPosition = str.indexOf("Ram", foundPosition);
+		if(foundPosition != -1){
+			foundPosition++;
+			stringCount++;
+		}
+	}
+	console.log(stringCount);
+</script>
+
+
+
+
+</body>
+</html>

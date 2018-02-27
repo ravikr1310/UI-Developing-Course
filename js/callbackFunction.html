@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>callback function</title>
+	<!--
+		A callback function passed as a arguments to the another function.
+	-->
+</head>
+<body>
+<input type="button" onclick="DoProcess(10,20, ShowDiff)" Value="Show"/>
+
+<script type="text/javascript" >
+	function DoProcess(a,b, toShowDiff){
+		alert("Add: " + (a+b).toString());
+		toShowDiff(a,b);
+	}
+	
+	function ShowDiff(p,q){
+		alert("Diff: " + (p+q).toString());
+	}
+	
+</script>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>call() and apply()</title>
+	<!--Def:-  The Call() method is predefined javascript function method -->
+	<!--Use:- We can use a method belonging to another object -->
+</head>
+<body>
+<script type="text/javascript" >
+	var obj = {num:6};
+	
+	var AddToThis = function(a,b,c){
+		return this.num + a + b + c;
+	}
+	
+	console.log("Call Method: " + AddToThis.call(obj, 6,6,3));
+	
+	var arr = [6,6,3];
+	console.log("Apply Method: " + AddToThis.apply(obj, arr));
+</script>
+
+</body>
+</html>

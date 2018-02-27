@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+    <head>
+        <title>$broadcast</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width , initial-scale=1">
+		<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>-->
+		<link rel="stylesheet" href="bootstrap.min.css">
+    </head>
+    <body>
+	
+	<script src="js/angular.min.js"></script> 
+    <script>
+	
+	var arr = ["apple","mango","banana"];
+	
+	function solution(data){
+		var c,txt = "";
+		for(var i=0; i<data.length; i++){
+			c = data[i];
+			if(i%2==0){
+				c = c.toUpperCase();
+			}
+			txt+= c;
+		}
+		return txt;
+	}
+	
+	for(x in arr){
+	debugger;
+		document.write(solution(arr[x]) + "<br>");
+	}
+	
+    </script>
+    
+    </body>
+</html>

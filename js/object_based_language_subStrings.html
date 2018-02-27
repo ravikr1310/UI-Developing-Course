@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test expression, case expression, break expression, default expression</title>
+	
+</head>
+<body>
+<script type="text/javascript" >
+debugger
+var myString = "Well Come to Wrax";
+myString = myString + " " + "The Wrox website is www.wrox.com.";
+myString = myString + " " + "Visit the Wrox website today. Thanks for buying Wrox";
+
+var foundAtPosition = 0;
+var wroxCount = 0;
+debugger
+while( foundAtPosition != -1){
+debugger
+	foundAtPosition = myString.indexOf("Wrox", foundAtPosition);
+	if(foundAtPosition != -1){
+		wroxCount++;
+		foundAtPosition++;
+	}
+}
+document.write("There are " + wroxCount + "occurrences of the word Wrox");
+	
+</script>
+
+</body>
+</html>

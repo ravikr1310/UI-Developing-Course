@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body ng-controller="myCtrl">
+
+<label><input type="checkbox" ng-model="s_h">Do you want to view salary</label>
+
+<table border="1">
+<tr>
+	<th>Name</th>
+	<th>Gender</th>
+	<th>City</th>
+	<th ng-show="s_h">Salary</th>
+	<th ng-hide="s_h">Salary</th>
+</tr>
+<tr ng-repeat="x in employee">
+	<td>{{x.name}}</td>
+	<td>{{x.gender}}</td>
+	<td>{{x.city}}</td>
+	<td ng-show="s_h">{{x.salary}}</td>
+	<td ng-hide="s_h">xxxxxx</td>
+</tr>
+
+</table>
+
+<br><br>
+<hr>
+<div ng-controller="myCtrl">
+	<div ng-show="data.isShow">ng-show-visible</div>
+	<div ng-hide="data.isHide">ng-hide-hidden</div>
+</div>
+<script>
+angular.module('myapp',[]).controller('myCtrl', function($scope){
+	var employee = {};
+	var emp = [
+	{"name":"Rahul Sikre","gender":"Male","city":"Delhi","salary":400000},
+	{"name":"Meea","gender":"Female","city":"Pune","salary":403000},
+	{"name":"Kamal","gender":"Male","city":"Shimal","salary":430000},
+	{"name":"Ashish","gender":"Male","city":"Noida","salary":443210},
+	{"name":"Jugmohen","gender":"Male","city":"Banarash","salary":165432},
+	{"name":"Abishek","gender":"Male","city":"Asansol","salary":652343},
+	{"name":"Manshi","gender":"Female","city":"Delhi","salary":340000},
+	{"name":"Rama","gender":"Male","city":"UP","salary":965437},
+	{"name":"Shyam","gender":"Male","city":"Himachal","salary":210000},
+	{"name":"Rajeev","gender":"Male","city":"Shalimar","salary":980000},
+	{"name":"Santosh","gender":"Male","city":"Punjab","salary":330000}
+	];
+	$scope.employee = emp;
+	
+	$scope.data = {};
+	$scope.data.isShow = true;
+	$scope.data.isHide = true;
+	
+});
+</script>
+</body>
+</html>

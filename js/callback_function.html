@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>callback function</title>
+	
+</head>
+<body>
+<!--
+    ------callback function in jQuery-----------
+
+-->
+<script src="jquery.min.js"></script>
+<script type="text/javascript" >
+ $(document).ready(function(){
+     $('button').click(function(){
+        $('p').hide('slow',function(){ // using callback function
+             alert('now it has been hidden');
+         });
+         
+         $('p').hide('1000'); // without callback function
+         alert('now it has been hidden');
+         
+     });
+ });
+     
+</script>
+<button type="button">Click me!</button><br>
+    <p>hide me</p>
+</body>
+</html>

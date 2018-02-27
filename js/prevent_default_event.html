@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>event preventDefault</title>
+	
+</head>
+<body>
+<!--
+    Use of event.preventDefault()
+    1. method stop the default action of an element from happening.
+
+-->
+<script src="jquery.min.js"></script>
+<script type="text/javascript" >
+    
+$(document).ready(function(){
+    $("a").click(function(event){
+        event.preventDefault();
+    });
+    
+});	    
+     
+</script>
+
+<a href="#">Click me</a>
+<a href="#" id="clickMe">Click me with id</a>
+    
+</body>
+</html>

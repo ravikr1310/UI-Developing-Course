@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Closure function</title>
+	
+</head>
+<body>
+<!--
+A closure function is a inner functin that has access to the outer function variables-scope chain.
+	1. it has access to its own scope(variable defined between it curly bracket)
+	2. it has access to the outer function variable
+	3. it has access to the global variables
+	
+	// it can access outer function parameter but not parameters object
+
+-->
+<script type="text/javascript" >
+	function outerFunction(fName, lName){
+		var fullDetail = "My Full Name is: ";
+		function innerFunction(){
+			return fullDetail + " " + fName + " " + lName;
+		}
+		return innerFunction();
+	}
+	
+	document.write(outerFunction("Ravi","Kumar"));
+	
+	/*
+		As you can see there, a is now an object, with a method publicfunction ( a.publicfunction() ) which calls privatefunction, which only exists inside the closure. You can NOT call privatefunction directly (i.e. a.privatefunction() ), just publicfunction().
+	*/
+	a = (function () {
+		var privatefunction = function () {
+			alert('hello Ravi');
+		}
+
+		return {
+			publicfunction : function () {
+				privatefunction();
+			}
+		}
+	})();
+	//a.publicfunction();
+	a.privatefunction();
+</script>
+
+</body>
+</html>

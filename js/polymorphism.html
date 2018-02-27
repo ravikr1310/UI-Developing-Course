@@ -1,0 +1,30 @@
+<script>
+function Emp(){
+	this.say = function(){};
+}
+
+function crow(){};
+
+crow.prototype = new Emp();
+crow.prototype.say = function(){
+	return "I am Crow ";
+};
+
+function dog(){};
+dog.prototype = new Emp();
+dog.prototype.say = function(){
+	return "I am dog";
+};
+
+var userObj = new crow();
+
+function dw(data){
+	document.write(data);
+}
+
+dw(userObj.say());
+
+var editorObj = new dog();
+
+dw(editorObj.say());
+</script>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+<h1 id="output"></h1>
+<script>
+var s1="abcedefgh";
+var s2="abcefgkmn";	
+
+function pair_genrate(str){
+debugger;
+	var j = 0;	
+	var c,txt="";
+		for(var i=1; i <= str.length;i++){
+			c=str[j++];
+			if(i%2==0){
+				c=c+",";
+				}
+			txt+=c;
+		}
+	return txt;
+}	
+var str1=pair_genrate(s1);
+var str2=pair_genrate(s2);
+var arr1=str1.split(",");	
+var arr2=str2.split(",");	
+arr1.pop();
+arr2.pop();
+var ret=[];	
+//data
+for(var i=0;i<arr1.length;i++){
+debugger;
+	if(arr2.indexOf(arr1[i]) > -1){
+            ret.push( arr1[i]);
+        }
+	else{
+		ret.push("data not found")
+	}
+}
+
+	document.write(ret);
+</script>
+
+</body>
+</html>

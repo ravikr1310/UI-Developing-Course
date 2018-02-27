@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prototype and Inheritance</title>
+	
+</head>
+<body>
+<!--
+    Use of prototype
+    1. Add new property and method to the function/class
+    2. inheritance property from one class to another class.
+-->
+<script type="text/javascript" >
+    function parent(){ // class template
+        this.firstName = "Ajit"; // property
+        this.lastName = "Kumar"; // property 
+        this.fullName = function(){ // methods
+            return "This is my Full Name : - " + this.firstName + " " + this.lastName;            
+        }
+	}
+    /*var parentObj = new parent(); // created object of parent() class
+    console.log(parentObj.fullName());*/
+	
+    function child(){
+        this.firstName = "Lalu";
+		this.lastName = "Yadav";
+        this.fullName  = function(){
+            return "In child full name : " + this.firstName + " " + this.lastName;
+        }
+    }    
+    var childObj = new child(); // created instance/object for child() class
+    console.log(childObj.firstName); // Lalu
+	console.log(childObj.lastName); // Yadav
+    console.log(childObj.fullName()); // In child full name : Lalu Yadav
+    
+    document.write("<hr>");  
+    
+	function parentClass(){ // parent class template
+        this.firstName = "Ravi"; // property
+        this.lastName = "Kumar"; // property
+        this.fullName = function(){ // method
+            return this.firstName + " " + this.lastName;
+        }
+    }
+    
+    function childClass(){ // child class
+        this.firstName = "Rajeev";
+        this.lastName = "Nonia";
+        this.fullName = function(){
+            return firstName + " " + lastName;
+        }
+    }
+    var objParentClass = new parentClass(); // created instance/object for parentClass()
+    parentClass.prototype.address = "Uttam Nagar"; // added new property to parentClass outside of it.
+    
+    var objChildClass = new childClass(); // created instance/object for childClass()
+    childClass.prototype.address = "Nazafgarh"; // added new property to childClass() outside of it
+    
+    var inst1 = new childClass();
+    inst1.prototype = new parentClass();
+    
+    //alert(inst2 instanceof parentClass());
+    console.log("Inheritance using Prototype: " + objParentClass.firstName + " " + objParentClass.lastName);
+</script>
+
+</body>
+</html>

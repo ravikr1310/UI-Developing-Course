@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>event bubbling</title>
+	
+</head>
+<body>
+<!--
+    Use of event.stopPropagation()
+    1. stop click event from bubbling to parent elements.
+
+-->
+<script src="jquery.min.js"></script>
+<script type="text/javascript" >
+    
+$(document).ready(function(){
+    $("span").click(function(event){
+        alert("Span has been clicked");
+        event.stopPropagation();
+    });
+    
+    $("p").click(function(){
+        alert("P has been clicked");
+    });
+    
+    $("div").click(function(){
+        alert("Div has been clicked");
+    });
+});	    
+     
+</script>
+
+<div> div content
+    <p> paragraph content
+        <span>
+         span content
+        </span>
+    </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body ng-controller="myCtrl">
+<label><strong>two way binding: </strong></label><input type="text" ng-model="name"><br>
+	<span><strong>One Way DataBinding:</strong> {{:: name}}</span><br>	
+	<span><strong>Two Way DataBinding:</strong> {{name}}</span><br>
+	<span><strong>ng bind: </strong><span ng-bind="name"></span></span>
+<script>
+	var app = angular.module('myApp', []);
+	app.controller('myCtrl', function($scope){
+		$scope.name = "Harnet Singh";
+	});
+</script>
+</body>
+</html>

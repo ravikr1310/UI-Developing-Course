@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title></title>
+	</head>
+	<body>
+	<div>
+		<ul id="ul">
+			
+		</ul>
+	</div>
+	<script>
+	function dw(data){
+		document.write(data);
+	}
+	
+	function dynamicEle(){
+	debugger;
+		var counter = 0;
+		dw("<ul>");
+		for(var i = 0; i<=5; i++){
+			dw("<li id=" + counter++ +">" +  counter++ + "</li>");
+		}
+		dw("</ul>");
+	}
+	dynamicEle();
+	</script>
+	</body>
+</html>
+

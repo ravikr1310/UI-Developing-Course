@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Split(), replace(), reverse() and toLowerCase() method</title>
+	
+</head>
+<body>
+<script type="text/javascript" >
+<!-- function isPalindrome(str) { -->
+<!-- debugger -->
+    <!-- str = str.replace(/\W/g, '').toLowerCase(); -->
+    <!-- return ( -->
+		<!-- str == str.split('').reverse().join('') -->
+	<!-- ); -->
+<!-- } -->
+<!-- document.write(isPalindrome("level")); // logs 'true' -->
+<!-- document.write("<br>");                   -->
+<!-- document.write(isPalindrome("levels"));  // logs 'false' -->
+<!-- document.write("<br>");                 -->
+<!-- document.write(isPalindrome("A car, a man, a maraca"));  // logs 'true' -->
+
+// replace => to remove space, comma, and special cherater from string
+function splitMethod(str){
+debugger
+	str = str.toLowerCase(); 
+	str = str.replace(/\W/g, '').toLowerCase(); // converted all capital letter to lower case by "toLowerCase()" method
+												// removed all spaces, comma, fullstop by "replace()" method
+	return (		
+		str == str.split('').reverse().join('') // apply comma after each and every letter by "split()" method, 
+											   // then reverse it by "reverse()" method.
+											   // then remove applied comma and joined all seperated letter by "join()" method
+		
+	);
+}
+console.log(splitMethod("I am a boy, and i am 5 years old.")); // false
+console.log(splitMethod("madam")); // true
+var strng = "Hello World";
+console.log(strng.split(' ').join(',')); // applied comma to each and every letter in strng data
+//console.log(strng.join(" ; ")); 
+</script>
+
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--<link rel="stylesheet" href="bootstrap.min.css">-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="full-slider.css">
+  
+  <style>
+	  .fake-div {
+		  width:100%;
+		  height: 1200px;
+		  position:relative;
+		}
+  </style>
+</head>
+<body>
+<!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#"><img class="img-responsive" width="50px" height="50px" src="images/logo.jpg"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+<!-- Navigation END-->
+
+<!-- Slider -->
+<header>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <!-- Slide One - Set the background image for this slide in the line below -->
+          <div class="carousel-item active" style="background-image: url('http://placehold.it/1900x1080')">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>First Slide</h3>
+              <p>This is a description for the first slide.</p>
+            </div>
+          </div>
+          <!-- Slide Two - Set the background image for this slide in the line below -->
+          <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Second Slide</h3>
+              <p>This is a description for the second slide.</p>
+            </div>
+          </div>
+          <!-- Slide Three - Set the background image for this slide in the line below -->
+          <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Third Slide</h3>
+              <p>This is a description for the third slide.</p>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </header>
+<!-- Slider END-->
+
+<!-- Thumbnail -->
+<div class="container" style="margin-top:50px; margin-bottom:50px;">
+<div class="row" id="counter">
+  <div class="col-md-4">
+    <div class="thumbnail">
+      <a href="images/Desert.jpg">
+        <img src="images/Desert.jpg" alt="Lights" style="width:100%">
+        <div class="caption">
+          <div class="counter-value" data-count="96">0</div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="thumbnail">
+      <a href="images/Desert.jpg">
+        <img src="images/Desert.jpg" alt="Nature" style="width:100%">
+        <div class="caption">
+          <div class="counter-value" data-count="100">20</div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="thumbnail">
+      <a href="images/Desert.jpg">
+        <img src="images/Desert.jpg" alt="Fjords" style="width:100%">
+        <div class="caption">
+          <div class="counter-value" data-count="200">100</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- Thumbnail END-->
+
+<!-- Sidebar -->
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<a href="#" class="thumbnail">
+             <img src="images/Tulips.jpg" class="img-responsive" width="100%">
+			</a>
+		</div>
+		<div class="col-md-6">
+			<div class="container">
+			 <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Collapsible Group 1</a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse in">
+        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Collapsible Group 2</a>
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Collapsible Group 3</a>
+        </h4>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+      </div>
+    </div>
+  </div>
+			  
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Sidebar END-->
+
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+  <div class="container">
+	<p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+  </div>
+  <!-- /.container -->
+</footer>
+<script src="jquery.min.js"></script>
+    <script src="bootstrap.bundle.min.js"></script>
+	<script>
+	var a = 0;
+	$(window).scroll(function() {
+
+	  var oTop = $('#counter').offset().top - window.innerHeight;
+	  if (a == 0 && $(window).scrollTop() > oTop) {
+		$('.counter-value').each(function() {
+		  var $this = $(this),
+			countTo = $this.attr('data-count');
+		  $({
+			countNum: $this.text()
+		  }).animate({
+			  countNum: countTo
+			},
+
+			{
+
+			  duration: 2000,
+			  easing: 'swing',
+			  step: function() {
+				$this.text(Math.floor(this.countNum));
+			  },
+			  complete: function() {
+				$this.text(this.countNum);
+				//alert('finished');
+			  }
+
+			});
+		});
+		a = 1;
+	  }
+
+});
+</script>
+  
+</body>
+</html>

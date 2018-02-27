@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <title>Link property/function</title>
+    <head></head>
+<body>
+
+<div ng-app="myApp" ng-controller="myController">
+    <p>First Variable: {{controllerName}}</p>  
+    <p>Second Variable : {{age}}</p>
+    <input type="button" value="From Controller" ng-click="alertName()">
+    
+    <p>*****************Directive*******************</p>
+    <div first-directive name="{{nameScope}}" age="age" fun="alertName()"></div>
+</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script>
+        var app = angular.module('myApp',[]);
+        
+        
+        app.directive('firstDirective',function(){
+            return{
+                restrict:'EA',
+                scope:{
+                    name: '@', // text getter
+                    age: '=', // two way binding
+                    fun: '&' // one way binding
+                },
+				controller: function(scope, elem, attr, ctrl){
+					ctrl.name = "Ravi";
+				}
+                template:['<p>First Variable : {{ctrl.name}}</p>',
+                          '<input type="text" ng-model="name">',
+                         '<p>Second Variable: {{age}}</p>',
+                          '<input type="text" ng-model="age">',
+                          '<input type="button" value="From Directive" ng-click="fun()">'].join('')
+            }    
+        });
+        
+        app.controller('myController',function($scope){
+            $scope.nameScope = "Ravi Kumar";
+            $scope.age = 100;
+            $scope.alertName = function(){
+                alert($scope.nameScope);
+            }
+        });
+    </script>
+</body>
+</html>

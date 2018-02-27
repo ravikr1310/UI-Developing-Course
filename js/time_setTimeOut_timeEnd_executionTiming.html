@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Execution time , setTimeOut and timeEnd</title>
+	
+</style>
+</head>
+<body>
+    
+<script type="text/javascript" >
+debugger;
+	console.time("sarvesh1");
+	for (var i = 0; i < 5; i++) {
+		(function(i) {
+			setTimeout(function() {
+				console.log(i);
+			}, i);
+		})(i);
+	}
+	console.timeEnd("sarvesh2");
+	
+</script>
+
+</body>
+</html>

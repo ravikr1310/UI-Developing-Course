@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Accordion</title>
+	<style>
+		div#expander{
+		  width: 100px;
+		  height: 100px;
+		  background-color: blue;
+		}
+	</style>
+</head>
+<body>
+<div id="expander"></div>
+<script src="jquery.min.js"></script>
+<script type="text/javascript" >
+ $(document).ready(function(){
+	$('#expander').animate({
+		width:"200px",
+		height:"200px",
+	},800);
+ });
+     
+</script>
+
+</body>
+</html>

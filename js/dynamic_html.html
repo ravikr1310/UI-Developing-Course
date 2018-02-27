@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>For Loop using array[]</title>
+	
+</head>
+<body>
+    
+    <div id="div"></div>
+    
+<script>
+    function dw(data){
+        document.write(data);
+    }
+    var numberText = ["One","Two","Three", "Four","Five"];
+    var fruits = ["Apple","Mango","Orange","Banana"];
+    var totalArrayElements = numberText.concat(fruits);
+    
+    dw("<table border='1' cellpadding='10' cellspacing='0' ><tr>");
+        for(x in totalArrayElements){
+            dw("<td>" + totalArrayElements[x] + "</td>");
+        }    
+    dw("</tr></table>");
+    
+    dw("<hr>");
+    
+    function dynamicUl(){
+        dw("<ul>");    
+            for(x in fruits){
+                dw("<li>" + fruits.indexOf(fruits[x]) + ". " + fruits[x] + "</li>");
+            }
+        dw("</ul>");        
+    }
+    
+    document.getElementById('div').appendChild(dynamicUl());
+    
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<title></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+.item p{display:none;}
+.item.active p{display:block;}
+</style>
+</head>
+<body>
+<div id="accordion">
+ <div class="item active">
+ <h1>Item 1</h1>
+ <p>item 1 container</p>
+ </div>
+  <div class="item">
+ <h1>Item 1</h1>
+ <p>item 1 container</p>
+ </div>
+  <div class="item">
+ <h1>Item 1</h1>
+ <p>item 1 container</p>
+ </div>
+  <div class="item">
+ <h1>Item 1</h1>
+ <p>item 1 container</p>
+ </div>
+</div>
+<script>
+$(document).ready(function(){
+ $("h1").click(function(){
+  $("#accordion .item").removeClass("active");
+  $(this).parent().addClass("active");
+ })
+});
+</script>
+</body>
+</html>

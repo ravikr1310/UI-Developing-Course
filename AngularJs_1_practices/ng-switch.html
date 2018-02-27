@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body ng-controller="myCtrl">
+<div ng-switch on="data.case">
+	<div ng-switch-when="1">Show when case is one</div>
+	<div ng-switch-when="2">Show when case is two</div>
+	<div ng-switch-default>Show when anything else then one and two</div>
+</div>
+
+<script>
+angular.module('myapp',[]).controller('myCtrl', function($scope){
+	
+	
+	$scope.data = {};
+	$scope.data.case = 1;
+	
+});
+</script>
+</body>
+</html>

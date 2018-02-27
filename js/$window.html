@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>on Window Scroll</title>
+<style>
+</style>
+</head>
+<body ng-controller="myCtrl">
+  <button ng-click="myName()">Click me!</button>
+<!--<script src="jquery.min.js"></script>-->
+<script src="js/angular.min.js"></script>
+<script>
+	var app = angular.module("myApp",[]);
+	app.controller("myCtrl", function($scope,$window){
+		$scope.name = "Ravi Kumar";
+		$scope.myName = function(name){
+			$window.alert(this.name);
+		}
+	});
+</script>
+
+
+
+
+</body>
+</html>

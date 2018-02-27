@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <title>Link property/function</title>
+    <head></head>
+<body>
+
+<div ng-app="myApp" ng-controller="myController">
+    <first-directive></first-directive>
+    <div first-directive></div>
+</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script>
+        
+    /**************************************  TYPE One  *************************************/
+     /*angular.module('myApp',[]).controller('myController',function($scope){
+         $scope.name = "Ravi Kumar";
+         
+     }).directive('firstDirective', function(){
+         return{
+             restrict: "EA",
+             template:"<span>{{name}}</span>"
+         }
+     });*/
+    
+    /**************************************  TYPE TWO with link function *************************************/
+    var app = angular.module('myApp',[]);
+    app.controller('myController', function($scope){
+        $scope.name = "Ravi kumar";
+    });
+    app.directive('firstDirective',function(){
+        /********************************************** First Example of link Function ****************/
+        function linkFunction($scope, ele, attr){
+            $scope.message = "Hello World!";
+            $scope.changeMessage = function(newMessage){
+                $scope.message = newMessage;
+            };
+        }
+        return{
+            restrict:"EA",
+            link: linkFunction,
+            template:'<span ng-click="changeMessage(\'Welcome In New World!\')">Message : {{message}}</span>'
+        }
+        
+        /********************************************** Second Example of Link Function *************/
+        function linkFunction($scope, ele, attr){
+            ele.bind('click',function(){
+                alert(ele[0].innerHTML);
+            });
+        }
+        return{
+            restrict: 'EA',
+            template:'Hello World!',
+            link: linkFunction
+        }
+    });
+    </script>
+</body>
+</html>

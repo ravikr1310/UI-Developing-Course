@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    .div{
+		width:200px;
+		height:200px;
+		border:1px solid;
+		transition-property: width, height, background;
+		transition-duration: 2s;
+		transition-timing-function: ease-out;
+		/*transition-delay:4s;*/
+		
+	}
+	/* css effect 
+	.div:hover{
+		width:400px;
+		height:400px;
+		background:green;
+	}*/
+</style>
+</head>
+<body>
+    <div class="div" id="div">Hi</div>
+	<script>
+		var divEle = document.getElementById("div");
+		
+		divEle.onmouseover = function(){
+			divEle.style.width = "400px";
+			divEle.style.height = "400px";
+			divEle.style.backgroundColor = "red";
+		}
+	</script>
+</body>
+</html>

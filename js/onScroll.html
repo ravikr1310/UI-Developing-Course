@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Scroll</title>
+<style>
+	body{
+		margin:0;		
+	}
+	.head{
+		width:100%;
+		padding: 10px 0;
+		background-color: blue;
+		height: 120px;
+		position: relative;
+		position: fixed;
+		top: 0;
+	}
+	.sub_head{
+		width:100%;
+		background-color:crimson;
+		height: 50px;
+		position: absolute;
+		bottom: 0;
+	}
+	</style>
+</head>
+
+<body>
+<div class="head"  id="a">
+	<div class="sub_head" id="b"></div>
+</div>
+<p id="demo"></p>
+<script>
+for(var i=0;i<40;i++){
+	document.write("<h2>Hello On  sCroll Method</h2>" + i);
+}	
+</script>
+<script>
+var a=document.getElementById("a");
+var b=document.getElementById("b");	
+a.style.WebkitTransition="height 1s";
+b.style.WebkitTransition="height 1s";
+window.onscroll=function(){
+	var yLen=window.pageYOffset
+	if(yLen>60){
+		a.style.height="60px";
+		b.style.height="0";
+	}else{
+		a.style.height="120px";
+		b.style.height="60px";
+	}
+	document.getElementById("demo").innerHTML = yLen;
+}	
+</script>
+</body>
+</html>

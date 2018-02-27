@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> Global Tech</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width , initial-scale=1">
+        <style>
+        
+        </style>
+    </head>
+    <body ng-app="myApp">
+	
+	
+    <!-- <div ng-controller="parentCtrl"> -->
+		<!-- <h1>Parent Controller</h1> -->
+		<!-- <label>Emit Message: {{message}}</label> -->
+		<!-- <div ng-controller="childCtrl"> -->
+			<!-- <h1>Child Controller</h1> -->
+			<!-- <input ng-model="msg" type="text"> -->
+			<!-- <button type="button" ng-click="hackClick(msg)">Click Me!</button> -->
+		<!-- </div> -->
+	<!-- </div> -->
+	
+	<div ng-controller="parentCtrl">
+		<h1>Parent Controller</h1>
+		<input type="text" ng-model="msg">
+		<button type="button" ng-click="hackClick(msg)">Click Me!</button>
+		<div ng-controller="childCtrl">
+			<h1>Child Controller</h1>
+			<label>BroadCast Message: {{message}}</label>
+		</div>
+	</div>
+	
+    <script src="js/angular.min.js"></script>    
+    <script>
+        var app = angular.module('myApp',[]);
+		app.controller('parentCtrl', function($scope){
+			$scope.hackClick = function(msg){
+				$scope.$broadcast('eventName',{message:msg});
+			};
+		});
+		app.controller('childCtrl', function($scope){
+			$scope.$on('eventName', function(event, args){
+				$scope.message = args.message;
+			});
+		});
+		<!-- app.controller('parentCtrl', function($scope){ -->
+			<!-- $scope.$on('eventName', function(event, args){ -->
+				<!-- $scope.message = args.message; -->
+			<!-- }); -->
+		<!-- }); -->
+		
+		<!-- app.controller('childCtrl', function($scope){ -->
+			<!-- $scope.hackClick = function(msg){ -->
+				<!-- $scope.$emit('eventName',{ message: msg}); -->
+			<!-- } -->
+		<!-- }); -->
+    </script>
+    
+    </body>
+</html>

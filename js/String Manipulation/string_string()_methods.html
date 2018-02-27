@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>string and string() methods</title>
+	
+</head>
+<body>
+    
+<script type="text/javascript" >
+    var str = "Hello jQuery";
+    
+	var mat = str.match("Q");
+	console.log("Match" + mat);
+	
+    var pos = str.indexOf("jQuery"); // 6 > 
+    console.log("indexOf: " + pos)
+    
+    var pos = str.search("jQuery");
+    console.log("search: " + pos); 
+    
+    var pos = str.substring(1,5); // ello
+    console.log("substring: " + pos);
+    
+ var pos = str.slice(1,5); // ello
+console.log("slice: " + pos);
+    
+    var pos = str.slice(-4,-2); // eu
+    console.log("slice in minu(-): " + pos);
+    
+    var pos = str.split(" "); // ["Hello","jQuery"]
+    console.log("split: " + pos.join("*")); // Hello, jQuery
+    
+    console.log("length: " + str.length);// 12
+</script>
+
+</body>
+</html>

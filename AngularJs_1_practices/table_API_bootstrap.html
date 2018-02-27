@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+    <head>
+        <title>$broadcast</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width , initial-scale=1">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+		<link rel="stylesheet" href="bootstrap.min.css">
+    </head>
+    <body>
+	<div class="container" ng-controller="empCtrl">
+		<div class="row">
+			<table class="table table-responsive">
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Name</th>
+						<th>City</th>
+						<th>Country</th>
+					</tr>					
+				</thead>
+				<tbody>
+					<tr ng-repeat="x in employee">
+						<td>{{$index}}</td>
+						<td>{{x.Name | uppercase}}</td>
+						<td>{{x.City}}</td>
+						<td>{{x.Country}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	
+	<!--<script src="js/angular.min.js"></script>-->  
+    <script>
+		var app = angular.module('myApp',[]);
+		
+		app.controller("empCtrl", function($scope, $http){
+			$scope.employee = {};
+			/*$scope.employee = [
+			{Id:1, Name: "Ravi", City: "Uttam Nagar", Country: "India"},
+			{Id:2, Name: "Suraj", City: "New Delhi", Country: "India"},
+			{Id:3, Name: "Mohan", City: "Mumbai", Country: "India"},
+			{Id:4, Name: "Dipak", City: "MP", Country: "India"},
+			{Id:5, Name: "Ajay", City: "Bihar", Country: "India"},
+			{Id:6, Name: "Javed", City: "West Bengal", Country: "India"}]*/
+			
+			$scope.getData = function(data){
+				$http.get('https://www.w3schools.com/angular/customers.php').success(function(data){
+					$scope.employee = data.records;
+				});				
+			}
+			$scope.getData();
+			
+		});
+		
+    </script>
+    
+    </body>
+</html>

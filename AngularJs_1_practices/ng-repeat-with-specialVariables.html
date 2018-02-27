@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body ng-controller="myCtrl">
+<ul>
+	<li ng-repeat="friends  in friend">
+		[{{$index}}] {{friends.name}} is a gender {{friends.gender}}
+		<span ng-if="$first">
+			<strong>First Element found</strong>
+		</span>
+		<span ng-if="$middle">
+			<strong>Middle Element found</strong>
+		</span>
+		<span ng-if="$last">
+			<strong>Last Element found</strong>
+		</span>
+	</li>
+</ul>
+
+<script>
+angular.module('myapp',[]).controller('myCtrl', function($scope){
+	$scope.friend = [
+		{name:"Ravi",age:32,gender:"male"},
+		{name:"Kavita",age:22,gender:"famale"},
+		{name:"Suraj",age:12,gender:"male"},
+		{name:"Kuldip",age:44,gender:"male"},
+		{name:"Pooja",age:25,gender:"female"}];
+	
+	
+	
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>isNAN</title>
+	
+</head>
+<body>
+<script type="text/javascript" >
+
+// question 1
+document.write("<h2>What will the code below output to the console and why?</h2>");
+(function(){
+  var a = b = 3;
+  
+  // below are thortened for the above
+  b = 3;
+  var a = b;
+})();
+document.write("a defined? " + (typeof a !== 'undefined')); // false
+document.write("<br>");
+document.write("b defined? " + (typeof b !== 'undefined')); // true
+document.write("<br>");
+document.write("<hr>");
+
+
+// question 2
+document.write("<h2>What will the code below output to the console and why?</h2>");
+function foo1()
+{
+  return {
+      bar: "hello"
+  };
+}
+
+function foo2()
+{
+  return 
+  {
+      bar: "hello"
+  };
+}
+document.write("foo1 returns:");
+document.write("<br>");
+document.write(foo1());
+document.write("<br>");
+document.write("foo2 returns:");
+document.write("<br>");
+document.write(foo2());
+document.write("<br>");
+document.write("<hr>");
+
+
+// question 3
+document.write("<h2>What will the code below output? Explain your answer</h2>");
+document.write(0.1 + 0.2);
+document.write("<br>");
+document.write(0.1 + 0.2 == 0.3);
+document.write("<br>");
+document.write(2 + 4 == 6);
+document.write("<br>");
+document.write("<hr>");
+
+
+// Question 4
+document.write("<h2>What is a potential pitfall with using typeof bar === 'object' to determine if bar is an object? How can this pitfall be avoided?</h2>");
+document.write("<br>");
+var bar = null;
+document.write(typeof bar === "object");  // logs true!
+document.write("<br>");
+document.write((bar !== null) && (typeof bar === "object"));  // logs false
+document.write("<br>");
+document.write((bar !== null) && ((typeof bar === "object") || (typeof bar === "function")));
+document.write("<br>");
+document.write("<hr>");
+
+// Question 5 
+document.write("<h2>What will the code below output to the console and why?</h2>");
+var myObject = {
+    foo: "bar",
+    func: function() {
+        var self = this;
+        document.write("outer func:  this.foo = " + this.foo);
+		document.write("<br>");
+        document.write("outer func:  self.foo = " + self.foo);
+		document.write("<br>");
+        (function() {
+            document.write("inner func:  this.foo = " + this.foo);
+			document.write("<br>");
+            document.write("inner func:  self.foo = " + self.foo);
+			document.write("<br>");
+        }());
+    }
+};
+myObject.func();
+document.write("<br>");
+document.write("<hr>");
+
+
+// question 5
+document.write("<h2>Discuss possible ways to write a function isInteger(x) that determines if x is an integer.</h2>");
+function isInteger(x){
+	var intVal = Math.round(x);
+	if(intVal  === x){
+		alert("Integer");
+	}else{
+		alert("Not an Integer");
+	}
+}
+isInteger(2); // integer value
+isInteger(6.20); // not an integer
+document.write("<br>");
+document.write("<hr>");
+
+
+// Question 6
+document.write("<h2>In what order will the numbers 1-4 be logged to the console when the code below is executed? Why?</h2>");
+(function() {
+    console.log(1); 
+    setTimeout(function(){
+		console.log(2)
+	}, 1000); 
+    setTimeout(function(){
+		console.log(3)
+	}, 0); 
+    console.log(4);
+})();
+document.write("<br>");
+document.write("<hr>");
+
+// Question 7
+document.write("<h2>Write a simple function (less than 80 characters) that returns a boolean indicating whether or not a string is a palindrome.</h2>");
+function isPalindrome(str) {
+    str = str.replace(/\W/g, '').toLowerCase();
+    return (
+		str == str.split('').reverse().join('')
+	);
+}
+
+document.write(isPalindrome("level")); // logs 'true'
+document.write("<br>");                  
+document.write(isPalindrome("levels"));  // logs 'false'
+document.write("<br>");                
+document.write(isPalindrome("A car, a man, a maraca"));  // logs 'true'
+
+// Question 8
+function loopConcent(){
+	<!-- for (var i = 0; i < 5; i++) { -->
+	  <!-- var btn = document.createElement('button'); -->
+	  <!-- btn.appendChild(document.createTextNode('Button ' + i)); -->
+	  <!-- btn.addEventListener('click', function(){  -->
+		<!-- console.log(i);  -->
+	<!-- }); -->
+	  <!-- document.body.appendChild(btn); -->
+	<!-- } -->
+	for (var i = 0; i < 5; i++) {
+  var btn = document.createElement('button');
+  btn.appendChild(document.createTextNode('Button ' + i));
+  (function (i) {
+    btn.addEventListener('click', function() { console.log(i); });
+  })(i);
+  document.body.appendChild(btn);
+}
+}
+loopConcent();
+
+// Question 9
+document.write("<h2>Write a sum method which will work properly when invoked using either syntax below.</h2>");
+function sum(x) {
+  if (arguments.length == 2) {
+    return arguments[0] + arguments[1];
+  } else {
+    return function(y) { return x + y; };
+  }
+}
+document.write(sum(2));
+
+// Question 10
+var arr1 = "john".split('');
+var arr2 = arr1.reverse();
+var arr3 = "jones".split('');
+arr2.push(arr3);
+console.log("array 1: length=" + arr1.length + " last=" + arr1.slice(-1));
+console.log("array 2: length=" + arr2.length + " last=" + arr2.slice(-1)); 
+
+// Question 11
+console.log(1 +  "2" + "2"); // 122
+console.log(1 +  +"2" + "2"); // 32
+console.log(1 +  -"1" + "2"); // 02
+console.log(+"1" +  "1" + "2"); // 112
+console.log( "A" - "B" + "2"); // NaN2
+console.log( "A" - "B" + 2); // 
+
+
+
+// Question 12
+for (var i = 0; i < 5; i++) {
+  setTimeout(function() { 
+	console.log(i); 
+	}, i * 1000 );
+}
+
+for (var i = 0; i < 5; i++) {
+	(function(x) {
+    	setTimeout(function() { console.log(x); }, x * 1000 );
+    })(i);
+}
+</script>
+
+</body>
+</html>

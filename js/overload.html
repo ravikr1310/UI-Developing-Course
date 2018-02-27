@@ -1,0 +1,33 @@
+<script>
+// polymorphism overload
+
+function Emp(){
+	this.cal = function(num1){};
+}
+
+function calc(){};
+calc.prototype = new Emp();
+calc.prototype.cal = function(num1, num2){
+	return num1 + num2;
+};
+
+
+function calc1(){};
+calc1.prototype = new Emp();
+calc1.prototype.cal = function(num1, num2, num3){
+	return num1 + num2 + num3;
+};
+
+
+// helper
+function dw(data){
+	document.write(data);
+}
+// create object 
+var obj1 = new calc();
+dw(obj1.cal(33,33));
+dw("<hr>");
+var obj2 = new calc1();
+dw(obj2.cal(2,4,5));
+
+</script>

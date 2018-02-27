@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body ng-controller="myCtrl">
+<select ng-model="sortByName">
+	<option value="+name">Ascending Name</option>
+	<option value="-name">Descending Name</option>
+	<option value="+salary">Ascending salary</option>
+	<option value="-salary">Descending salary</option>
+</select>
+<br><br>
+
+<table border="1">
+<tr>
+	<th ng-click="sortingFun('name')">Name</th>
+	<th>Gender</th>
+	<th ng-click="sortingFun('city')">City</th>
+	<th ng-click="sortingFun('salary')">Salary</th>
+</tr>
+<tr ng-repeat="x in employee | orderBy:sortByName">
+	<td>{{x.name | uppercase}}</td>
+	<td>{{x.gender}}</td>
+	<td>{{x.city}}</td>
+	<td>{{x.salary | currency}}</td>
+</tr>
+
+</table>
+<script>
+angular.module('myapp',[]).controller('myCtrl', function($scope){
+	var employee = {};
+	var emp = [
+	{"name":"Rahul Sikre","gender":"Male","city":"Delhi","salary":400000},
+	{"name":"Meea","gender":"Female","city":"Pune","salary":403000},
+	{"name":"Ajit","gender":"Male","city":"Shimal","salary":430000}
+	];
+	$scope.employee = emp;
+	
+	// method for sorting on click event
+	$scope.sortingFun = function(x){
+	//debugger;
+		$scope.sortByName = x
+	}
+	
+});
+</script>
+</body>
+</html>

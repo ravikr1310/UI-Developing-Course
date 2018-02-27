@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		.box{
+			width:25px;
+			height:25px;
+			background-color:red;
+			position:relative;
+			left:0;
+			top:0;
+		}
+	</style>
+</head>
+<body>
+<div class="box" id="box"></div>
+<!--<script src="jquery.min.js" type="text/javascript"></script>-->
+<script type="text/javascript" >
+var box_obj = document.getElementById("box");
+		
+var left = 0;
+var leftInterval_obj = setInterval(moveLeft,10);
+var rightInterval_obj;
+
+debugger;
+	function moveLeft(){
+		left++;
+		box_obj.style.left = left + "px";
+		if(left > 100){
+			clearInterval(leftInterval_obj);
+			rightInterval_obj = setInterval(moveRight,10);
+		}
+	}
+
+	function moveRight(){
+		left--;
+		box_obj.style.left = left + "px";
+		if(left < 1){
+			clearInterval(rightInterval_obj);
+			leftInterval_obj = setInterval(moveLeft,10);
+		}
+	}
+</script>
+</body>
+</html>

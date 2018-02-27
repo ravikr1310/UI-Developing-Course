@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>For Loop using array[]</title>
+	
+</head>
+<body>
+    
+<script>
+    var arr = ["Apple","Orange","Mango"];
+    var i;
+    function dw(data){
+        document.write(data);
+    }
+    dw("<table border='1' cellpadding='10' cellspacing='0'><tr>");
+    var arrCopy = arr;
+    for(x in arrCopy){
+        dw("<td>"+arrCopy[x]+"</td>");
+    }
+    dw("</tr></table>");
+</script>
+</body>
+</html>

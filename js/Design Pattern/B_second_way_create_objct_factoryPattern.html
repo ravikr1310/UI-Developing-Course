@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Factory Pattern</title>
+	
+</style>
+</head>
+<body>
+    
+<script type="text/javascript" >
+	// Factory pattern => It is a simple way to create object which is
+	// used by almost of the developer.
+	
+	function Person(name, age, work){
+		var obj = new Object();
+		obj.name = name;
+		obj.age = age;
+		obj.work = work;
+		
+		obj.personDetails = function(){
+			return this.name + " " + this.age + " " + this.work;
+		}
+		return obj;
+	}
+	var person1 = Person("Ravi",32,"UI Developer");
+	var person2 = Person("Ajit" , 100, "Majdoori");
+	document.write(person2.personDetails());
+</script>
+
+</body>
+</html>

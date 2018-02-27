@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tabs</title>
+	<style>
+		/*ul li{display:inline-block; text-decoration:none;}
+		ul li p{display:none;}
+		.tabNavigation{display:none;}*/
+        .active{display: block !important;color: red;}
+        .notActive{display: none !important;}
+        .content{display: none;}
+	</style>
+</head>
+<body>
+<ul id="tabs">
+	<li class="tabNavigation"><a href="#" class="active">Tab1</a></li>
+	<li class="tabNavigation"><a href="#">Tab2</a></li>
+	<li class="tabNavigation"><a href="#">Tab3</a></li>
+</ul>
+<div class="content active">Tab1 content......</div>
+<div class="content">Tab2 content.......</div>
+<div class="content">Tab3 Content ......</div>
+
+<script src="../js/jquery.min.js"></script>
+<script type="text/javascript" >
+$(document).ready(function(){
+	$("#tabs li a").on('click',function(event){
+        event.preventDefault();
+        $('#tabs a').removeClass('active');
+        $(this).addClass('active');
+        if($(this).hasClass('active') && $(this).closest('ul').next('div.content').hasClass('active')){
+            /*$(this).closest('ul').next('div.content').removeClass('active');
+            $(this).closest('ul').next('div.content').addClass('active');*/
+            $(this).closest('ul').next('div.content').addClass('active');
+        }else{
+            /*$(this).closest('ul').next('div.content').removeClass('active');
+            $(this).closest('ul').next('div.content').addClass('active');*/
+            $(this).closest('ul').next('div.content').addClass('notActive');
+        }
+           
+    });
+});
+</script>
+</body>
+</html>

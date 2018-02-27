@@ -1,0 +1,16 @@
+<div id="box" style="width:57px;height:57px;background-color:red;"></div>
+<script>
+var box=document.getElementById("box");
+var viewDim=window;
+var boxWidth = 57, delta = 2;
+setInterval(function(){
+  var left = parseInt(box.style.left);
+  if(left >= parseInt(viewDim.innerWidth - boxWidth)){
+    delta = -2;
+  }
+  if (left <= 0) {
+    delta = 2;
+  }
+  box.style.left = left + delta + 'px';
+}, 20);
+</script>

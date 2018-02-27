@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Closure function</title>
+<style>
+
+</style>
+</head>
+<body>
+<script>
+	var glo	 = "Hello";
+	function Counter(fname,lname){
+		var counter = 0;
+		var Increment = function(){
+			counter++;
+			alert(fname + " " + lname + " " + glo);
+			return fname + " " + lname;
+			alert(counter);
+			
+		}
+		return {
+			Increment
+		}
+	}
+	var x = Counter("Ravi","Kumar");
+	x.Increment();
+	x.Increment();
+	var x1 = Counter("Ajit","Singh");
+	x1.Increment();
+</script>
+
+</body>
+</html>

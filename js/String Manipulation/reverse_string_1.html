@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+
+
+<script>
+var str = "apple";
+var convertArray = str.split(",");
+var i;
+for(i = 0; i< str.length; i++){
+	convertArray[i] = convertArray[i].slice(0,1).toUpperCase() + convertArray[i].substr(1,convertArray[i].length-1);
+	document.write("First: " + convertArray[i] + "<br>");
+}
+document.write("<br>");
+
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Scope of Variable</title>
+	<style>
+</style>
+</head>
+<body>
+    
+<script type="text/javascript" >
+	function myFunction(){
+		var a = b = 10;
+	}
+	myFunction();
+	console.log("A: " + a); // a is undefined
+	console.log("B: " + b); // 10
+	
+</script>
+
+</body>
+</html>

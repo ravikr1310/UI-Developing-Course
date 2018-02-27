@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Scope hierachy and scope inheritance</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width , initial-scale=1">
+	<style>
+	
+	</style>
+</head>
+<body ng-app="myApp">
+<div ng-controller="parentCtrl">
+	<span>{{managerName}}</span><br>
+	<span>{{companyName}}</span><br>
+	<span>{{teamLeader}}</span><br>
+	<br>
+	<hr>
+	<div ng-controller="childCtrl">
+		<span>{{teamLeader}}</span><br>
+		<span>{{managerName}}</span><br>		
+		<span>{{companyName}}</span><br>
+	</div>
+</div>
+<script src="js/angular.min.js"></script>  
+<script src="js/route.js"></script>  
+	
+<script>
+
+   var app = angular.module('myApp',[]);
+	app.controller('parentCtrl', function($scope){
+		$scope.managerName = "Ravi";
+		$scope.companyName = "Servome";
+	});
+	
+	app.controller('childCtrl', function($scope){
+		$scope.$parent.teamLeader = "Ajit";
+	});
+	
+	
+
+	
+</script>
+
+</body>
+</html>

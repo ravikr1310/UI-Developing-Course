@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <title>isolates scope with Link property/function</title>
+    <head></head>
+<body>
+
+<div ng-app="myApp" ng-controller="myController">
+    <first-directive></first-directive>
+    <div first-directive></div>
+</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script>
+    var app = angular.module('myApp',[]);
+    app.controller('myController', function($scope){
+        $scope.controllerProperty = "Controller Message"; // this will bind in directive on if "scope: true" is decleared in directive.
+    });
+    app.directive('firstDirective', function(){
+        function linkFunction($scope, elem, attr){
+            $scope.message = "Hello World!"; // scope is sharing all among the directive to get rid of it we have to make isolated scope as given below in return section 
+            $scope.changeMessage = function(newMessage){
+                //$scope.message = newMessage;
+                $scope.message = $scope.controllerProperty; // when "scope: true"
+            }
+        }
+       return{
+           restrict:'EA',
+           link:linkFunction,
+           scope: true, // directive will create saperate scope for every directive
+           //scope:{}, // isolate scope in which prevent the bubbling of the event as given in below template and not prototyping scope
+           //scope:false, // if we pass scope as false and not declearing scope is same means.
+           
+           /*template:'<span ng-click="changeMessage(\'Welcome\')">New Message: {{message}}</span>'*/
+           template:'<span ng-click="changeMessage()">Controller Message{{message}}</span>' // when "scope: true"
+           
+       } 
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Positioning and Moving Content</title>
+<style>
+	.box1{
+		width:50px;
+		height:50px;
+		position:relative;
+		left:0;
+		top:20px;
+		background-color:green;
+	}
+	.box1 span{		
+		display:table-cell;
+		vertical-align:middle;
+		text-align:center;
+		line-height:center;
+		color:#fff;
+	}
+	.box2{
+		width:50px;
+		height:50px;
+		position:relative;
+		left:0;
+		top:100px;				
+		background-color:red;
+	}
+	.box2 span{
+		display:table-cell;
+		vertical-align:middle;
+		text-align:center;
+		color:#fff;
+	}
+</style>
+</head>
+<div class="box1" id="box1"><span>Box 1</span></div>
+<div class="box2" id="box2"><span>Box 2</span></div>
+<body onload="windown_onload()">
+
+
+<script>
+
+	function windown_onload(){
+		window.setInterval("box_animation()",50);
+	}
+	
+	var right_left = 1;
+	var top_bottom = 100;
+	var box_direction = false;	
+	
+	function box_animation(){
+		if(box_direction == false){
+			right_left++;
+			top_bottom--;
+			if(right_left == 100){
+				box_direction = true;
+			}			
+		}else {
+			right_left--;
+			top_bottom++;
+			if(right_left == 1){
+				box_direction = false;
+			}
+		}
+		box1.style.left = right_left + "px";
+		box2.style.top= top_bottom + "px";
+	}	
+</script>
+</body>
+</html>

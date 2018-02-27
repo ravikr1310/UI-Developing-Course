@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Clone of array</title>
+	
+</head>
+<body>
+    <script src="../js/jquery.min.js"></script>
+    <script type="text/javascript" >
+		var arr = [2,5,7,8]
+        function arrayClone(arr){
+		debugger
+			var tempArr = [];
+			var arrLength = arr.length;
+			
+			if(arrLength > 0){
+				for(var i = 0; i<arrLength; i++){
+					tempArr.push(arr[i]);
+					console.log(arr[i]);
+				}
+			}
+			return tempArr;
+		}
+		arrayClone(5);
+		document.write(arrayClone(arr));
+    </script>
+
+</body>
+</html>

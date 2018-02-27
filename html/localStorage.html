@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Local Storage Feature</h1>
+<input type="text" id="txtId">
+<span id="storeData"></span>
+<script>
+	function localStorage(){
+		localStorage.data = "Local Data";
+		document.getElementById('storeData').innerHTML = localStorage.data;
+		console.log(localStorage.data);
+	}
+	localStorage();
+</script> 
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>No. of letter found in a string</title>
+	<style>
+		.parentDiv{ width:100px; height:100px; background-color:yellow;}
+		#childDiv{ width:10px; height:10px; background-color:green; position:relative; left:0; right:0;}
+	</style>
+</head>
+<body>
+
+<!--<script src="js/angular.min.js"></script>-->
+<script>
+	var arr = ["apple","mango","banana"];
+	
+	var newArray = [];
+	var singleElement;
+	
+	function capitalize(data){
+		document.write("<ul>");
+			for(var i=0; i< arr.length; i++){
+				singleElement = arr[i];
+				newArray[i] = singleElement.charAt(0).toUpperCase() + singleElement.substring(1, singleElement.length);			
+				document.write("<li>" + newArray[i] + "</li>");			
+			}
+		document.write("</ul>");
+	}
+	capitalize(arr);
+</script>
+
+</body>
+</html>

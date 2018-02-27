@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>No. of letter found in a string</title>
+	<style>
+		body {
+   font-size: 0.8em;
+   color: #000;
+   font-family: Arial;
+}
+#container {
+    width: 200px;
+    height: 200px;
+    background: green;
+    position: relative;
+}
+#box {
+    width: 50px;
+    height: 50px;
+    background: yellow;
+    position: absolute;
+}
+div label, div input {
+    vertical-align: middle;
+    padding: 0px;
+    margin: 10px 0px;
+}
+	</style>
+</head>
+<body>
+<div id="container">
+            <div id="box"> </div>
+        </div>
+<br><br>
+<button type="button" onclick="startMove()">Start Animation</button>
+<!--<script src="js/angular.min.js"></script>-->
+<script>
+	var x = 0, y = 0; // position
+    var vx = 1, vy = 1; // direction
+    var t = setInterval(move, 10); // timer
+    var speedX = 1, speedY = 1; // default speed
+    var container = 200; // default container size
+    var box = 50; // default box size
+	
+	var boxDiv = document.getElementById('box');
+	
+	function move() {
+        x += (speedX * vx);
+        y += (speedY * vy);
+        if (x > container - box) {
+            vx *= -1;
+            x = container - box;
+        } else if (x < 0) {
+            vx *= -1;
+            x = 0;
+        }
+        if (y > 200 - box) {
+            vy *= -1;
+            y = 200 - box;
+        } else if (y < 0) {
+            vy *= -1;
+            y = 0;
+        }
+        boxDiv.style.left = x + 'px';
+        boxDiv.style.top = y + 'px';
+    }
+</script>
+
+</body>
+</html>

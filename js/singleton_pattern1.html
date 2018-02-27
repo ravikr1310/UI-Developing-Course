@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Singleton</title>
+	
+</head>
+<body>
+<script src="jquery.min.js"></script>
+<script type="text/javascript" >
+ function singletonPattern(fname,lname,age){
+	var obj =  new Object;
+	obj.fname = fname;
+	obj.lname = lname;
+	obj.age = age;
+	
+	obj.ageDetails = function(){
+		alert(this.age);
+	}
+	return obj;
+ }
+ 
+ var firstObj = singletonPattern("Ravi","Kumar",34);
+ var firstObj1 = singletonPattern("Sandeep","Sing",100);
+ console.log("My name is " + firstObj.fname + " " + firstObj.lname + " and i am " + firstObj.age + " years Old." );
+ console.log("My name is " + firstObj1.fname + " " + firstObj1.lname + " and i am " + firstObj1.age + " years Old." );
+</script>
+
+</body>
+</html>
